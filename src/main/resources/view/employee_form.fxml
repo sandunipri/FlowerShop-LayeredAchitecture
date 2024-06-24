@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootnodeE" prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.EmployeeFormController">
+   <children>
+      <ImageView fitHeight="139.0" fitWidth="152.0" layoutX="420.0" layoutY="262.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_27.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="719.0" fitWidth="1038.0" layoutX="-6.0" layoutY="-2.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_26.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="317.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE MANAGEMENT">
+         <font>
+            <Font name="Serif Bold Italic" size="26.0" />
+         </font>
+      </Text>
+      <Button fx:id="add" layoutX="916.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: FFC5C5;" text="ADD">
+         <font>
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="update" layoutX="916.0" layoutY="221.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: FFC5C5;" text=" UPDATE">
+         <font>
+            <Font name="Serif Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="delete" layoutX="915.0" layoutY="286.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="103.0" style="-fx-background-color: FFC5C5;" text="DELETE">
+         <font>
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="37.0" layoutY="89.0" prefHeight="242.0" prefWidth="852.0">
+         <children>
+            <Label layoutX="23.0" layoutY="43.0" text="E_ID :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <Label layoutX="559.0" layoutY="80.0" text="Name  :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <Label layoutX="19.0" layoutY="143.0" text="Email :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <Label layoutX="545.0" layoutY="143.0" text="Address :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <Label layoutX="554.0" layoutY="200.0" text="TelNo :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <TextField fx:id="txtEid" layoutX="116.0" layoutY="41.0" onAction="#btnCheackOnAction" onKeyReleased="#txtEmployeeEidKeyReleased" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <TextField fx:id="txtUid" layoutX="116.0" layoutY="91.0" onKeyReleased="#txtEmployeeUseIDKeyReleased" prefHeight="25.0" prefWidth="188.0" promptText="User-ID" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <TextField fx:id="txtName" layoutX="649.0" layoutY="78.0" onKeyReleased="#txtNameKeyReleased" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <TextField fx:id="txtAddress" layoutX="649.0" layoutY="141.0" onKeyReleased="#txtAddressKeyRelesed" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <TextField fx:id="txtJobRole" layoutX="116.0" layoutY="198.0" onKeyReleased="#txtJobRoleKeyReleased" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <Label layoutX="10.0" layoutY="200.0" text="JobRole :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <TextField fx:id="txtEmail" layoutX="116.0" layoutY="141.0" onKeyReleased="#txtEmployeeEmailKeyReleased" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <Label layoutX="11.0" layoutY="93.0" text="User_id :">
+               <font>
+                  <Font name="Serif Bold" size="17.0" />
+               </font></Label>
+            <TextField fx:id="txtTelNo" layoutX="649.0" layoutY="199.0" onKeyReleased="#txtEmployeeTelNoKeyReleased" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #f5f6fa; -fx-background-color: FFE5E5;">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font></TextField>
+            <JFXComboBox fx:id="eidcmbbox" layoutX="232.0" layoutY="41.0" onAction="#cmbEmployeeOnAction" prefHeight="25.0" prefWidth="90.0" />
+            <Text layoutX="258.0" layoutY="177.0" opacity="0.14" strokeType="OUTSIDE" strokeWidth="0.0" text="DREAMY FLOWERS">
+               <font>
+                  <Font name="Serif Bold" size="35.0" />
+               </font>
+            </Text>
+            <JFXComboBox fx:id="cmbUID" layoutX="314.0" layoutY="91.0" onAction="#cmbUIDonAction" prefHeight="32.0" prefWidth="90.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="back" layoutX="916.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: FFC5C5;" text="BACK">
+         <font>
+            <Font name="Serif Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblEmployeeCart" layoutX="58.0" layoutY="404.0" prefHeight="242.0" prefWidth="909.0" style="-fx-background-color: FFE6E6;">
+        <columns>
+          <TableColumn fx:id="coleid" prefWidth="91.53860664367676" text="EID" />
+          <TableColumn fx:id="coluid" prefWidth="103.07707977294922" text="UID" />
+            <TableColumn fx:id="colName" prefWidth="133.8463134765625" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="113.07711791992188" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="215.38494873046875" text="Email" />
+            <TableColumn fx:id="colJobRole" prefWidth="100.7694091796875" text="JobRole" />
+            <TableColumn fx:id="colTelNo" prefWidth="150.7694091796875" text="TelNo" />
+        </columns>
+      </TableView>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

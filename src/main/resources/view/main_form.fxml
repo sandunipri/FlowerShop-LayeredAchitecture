@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeMain" prefHeight="764.0" prefWidth="1480.0" style="-fx-background-color: FFEEF4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.MainFormController">
+   <children>
+      <AnchorPane fx:id="rootNodeMM" layoutX="372.0" layoutY="65.0" prefHeight="673.0" prefWidth="1062.0" style="-fx-background-color: FFEEF4;">
+         <children>
+            <ImageView fitHeight="680.0" fitWidth="1037.0" layoutX="21.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/img_26.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="321.0" layoutY="252.0" opacity="0.14" strokeType="OUTSIDE" strokeWidth="0.0" text="DREAMY FLOWERS">
+               <font>
+                  <Font name="Serif Bold" size="35.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="139.0" fitWidth="152.0" layoutX="453.0" layoutY="245.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/img_27.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <Label fx:id="lblDate" layoutX="1282.0" layoutY="14.0">
+         <font>
+            <Font name="Serif Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="1282.0" layoutY="40.0">
+         <font>
+            <Font name="Serif Bold" size="20.0" />
+         </font>
+      </Label>
+      <VBox prefHeight="764.0" prefWidth="355.0">
+         <children>
+            <AnchorPane fx:id="sideAnchoPane" prefHeight="778.0" prefWidth="355.0" styleClass="sideAnchoPane" stylesheets="@../Style/dashBoard.css">
+               <children>
+                  <Pane fx:id="inner_pane" layoutX="10.0" layoutY="14.0" prefHeight="74.0" prefWidth="312.0" styleClass="inner_pane" stylesheets="@../Style/dashBoard.css">
+                     <children>
+                        <Text layoutX="6.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DREAMY FLOWERS">
+                           <font>
+                              <Font name="Serif Bold" size="27.0" />
+                           </font>
+                        </Text>
+                     </children></Pane>
+                  <Button fx:id="dashBoard" alignment="CENTER" layoutX="13.0" layoutY="109.0" mnemonicParsing="false" onAction="#btnDashboardOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="dashBoard" stylesheets="@../Style/dashBoard.css" text=" DashBoard">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_13.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="EmployeeM" alignment="CENTER" layoutX="14.0" layoutY="167.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="EmployeeM" stylesheets="@../Style/dashBoard.css" text="Employees ">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_14.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="SupplierM" alignment="CENTER" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="SupplierM" stylesheets="@../Style/dashBoard.css" text="Suppliers ">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/pngwing.com(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="CustomerM" alignment="CENTER" layoutX="14.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="CustomerM" stylesheets="@../Style/dashBoard.css" text="Customer  ">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_15.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="OrderM" alignment="CENTER" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="OrderM" stylesheets="@../Style/dashBoard.css" text="Orders ">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="Order" fitHeight="26.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_16.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="PE" alignment="CENTER" layoutX="14.0" layoutY="409.0" mnemonicParsing="false" onAction="#btnPEOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="payment" stylesheets="@../Style/dashBoard.css" text="Add Products &amp; Events">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_17.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="service" alignment="CENTER" layoutX="14.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="305.0" styleClass="service" stylesheets="@../Style/dashBoard.css" text="Service &amp; Support">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_18.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="contact" alignment="CENTER" layoutX="14.0" layoutY="533.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="305.0" styleClass="contact" stylesheets="@../Style/dashBoard.css" text="Contacts">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_20.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="home" alignment="CENTER" layoutX="13.0" layoutY="656.0" mnemonicParsing="false" onAction="#btnhomeOnAction" prefHeight="49.0" prefWidth="305.0" styleClass="home" stylesheets="@../Style/dashBoard.css" text="Sign up">
+                     <font>
+                        <Font name="Serif Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_25.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

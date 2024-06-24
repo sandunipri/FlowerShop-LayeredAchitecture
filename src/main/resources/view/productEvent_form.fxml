@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeEP" prefHeight="606.0" prefWidth="773.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.productEventFormController">
+   <children>
+      <Text layoutX="30.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENTS &amp; PRODUCTS">
+         <font>
+            <Font name="Serif Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="477.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events">
+         <font>
+            <Font name="Serif Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="477.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products">
+         <font>
+            <Font name="Serif Regular" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="476.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ Wedding ">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ BirthDay Party ">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ Anniversary Party ">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ Valentine Party " wrappingWidth="137.134765625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ NewBorn Party " wrappingWidth="137.134765625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@  BirthDay gift" wrappingWidth="137.134765625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@  Valentine gift" wrappingWidth="137.134765625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ Anniversary gift" wrappingWidth="137.134765625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <Text layoutX="476.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Flower boquet " wrappingWidth="150.9853515625">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Text>
+      <ImageView fitHeight="500.0" fitWidth="332.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_7.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="178.0" fitWidth="167.0" layoutX="186.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="137.0" layoutX="290.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="251.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_10.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="158.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_11.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="rootNodeAbout" prefHeight="713.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.AboutFormController">
+   <children>
+      <Text fill="#7b0b49" layoutX="167.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Dreamy Flowers">
+         <font>
+            <Font name="Serif Bold" size="19.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="106.0" fitWidth="91.0" layoutX="68.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="91.0" layoutX="441.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <Text fill="#7b0b49" layoutX="212.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Who Are We ?">
+         <font>
+            <Font name="Serif Regular" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="56.0" layoutX="167.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="56.0" layoutX="345.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="148.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A Dreamy flower shop is a retail establishment that sells fresh flower products and givesfresh flowers for the celebrating events. The flower shop trade involves activities such asflower care, flower arranging, floral design, merchandising, and often flower delivery.thisflower shop specialise in providing the freshest and most exquisite flowers for all occasions.At Dreamy flower shop, consider getting the best flowers from trusted suppliers andmaintaining the natural beauty and fragrance of flowers. Dreamy flower shop expert designteam is committed to creating beautiful flower products and managing the flowers suitablefor the celebrating occasions." wrappingWidth="405.3852678450762">
+         <font>
+            <Font name="Sarai" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#7b0b49" layoutX="225.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catergory">
+         <font>
+            <Font name="Serif Regular" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="56.0" layoutX="184.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="56.0" layoutX="317.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="421.0" fitWidth="539.0" layoutX="132.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_5.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

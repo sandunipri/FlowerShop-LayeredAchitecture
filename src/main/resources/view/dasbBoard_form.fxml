@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.DashBoardFormController">
+   <children>
+      <AnchorPane prefHeight="673.0" prefWidth="1062.0">
+         <children>
+            <Pane layoutX="-7.0" prefHeight="666.0" prefWidth="1062.0">
+               <children>
+                  <Pane layoutX="4.0" prefHeight="70.0" prefWidth="1054.0" style="-fx-background-color: EEF7FF;">
+                     <children>
+                        <JFXTextField layoutX="564.0" layoutY="17.0" opacity="0.38" prefHeight="37.0" prefWidth="297.0" promptText="Search :">
+                           <font>
+                              <Font name="Loma Bold" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </Pane>
+                  <Text layoutX="40.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello! Dreamy Flowers">
+                     <font>
+                        <Font name="Loma Bold" size="37.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Providing fresh flower products and floral decorations for events !">
+                     <font>
+                        <Font name="Loma" size="15.0" />
+                     </font>
+                  </Text>
+                  <AnchorPane layoutX="551.0" layoutY="296.0" prefHeight="237.0" prefWidth="328.0" style="-fx-background-color: F0EDCF; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="26.0" layoutY="14.0" text="Product ">
+                           <font>
+                              <Font name="Loma" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="36.0" layoutY="127.0" text="Event ">
+                           <font>
+                              <Font name="Loma" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblProductOrdersCount" layoutX="70.0" layoutY="55.0" prefHeight="25.0" prefWidth="0.0">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblEventOrdersCount" layoutX="58.0" layoutY="167.0" prefHeight="25.0" prefWidth="23.0">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="147.0" fitWidth="155.0" layoutX="165.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_22.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="191.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product And Events is Successfull placed" wrappingWidth="83.60791015625">
+                           <font>
+                              <Font name="Loma" size="11.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="237.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/img_23.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="37.0" layoutY="402.0" prefHeight="184.0" prefWidth="122.0" style="-fx-background-color: FFD0EC; -fx-background-radius: 20;">
+                     <children>
+                        <Label fx:id="lblEmployeeCount" layoutX="49.0" layoutY="59.0" prefHeight="25.0" prefWidth="23.0">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="14.0" text="Employee  ">
+                           <font>
+                              <Font name="Loma" size="21.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="prograssBar" layoutX="7.0" layoutY="144.0" prefHeight="20.0" prefWidth="108.0" progress="0.27" styleClass="prograssBar" stylesheets="@../Style/dashBoard.css" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="199.0" layoutY="402.0" prefHeight="184.0" prefWidth="122.0" style="-fx-background-color: F0EDCF; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="20.0" layoutY="14.0" text="Supplier  ">
+                           <font>
+                              <Font name="Loma" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblSupplierCount" layoutX="53.0" layoutY="56.0" prefHeight="25.0" prefWidth="15.0">
+                           <font>
+                              <Font name="Serif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="prograssBar" layoutX="11.0" layoutY="141.0" prefHeight="20.0" prefWidth="108.0" progress="0.41" styleClass="prograssBar" stylesheets="@../Style/dashBoard.css" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="361.0" layoutY="402.0" prefHeight="184.0" prefWidth="131.0" style="-fx-background-color: F0EDCF; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="10.0" layoutY="14.0" text="Customer  ">
+                           <font>
+                              <Font name="Loma" size="21.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="prograssBar" layoutX="11.0" layoutY="142.0" prefHeight="20.0" prefWidth="108.0" progress="0.39" styleClass="prograssBar" stylesheets="@../Style/dashBoard.css" />
+                        <Label fx:id="lblCustomerCount" layoutX="50.0" layoutY="56.0" prefHeight="20.0" prefWidth="0.0">
+                           <font>
+                              <Font name="Serif Regular" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

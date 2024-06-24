@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeS" prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.SupplierFormController">
+   <children>
+      <ImageView fitHeight="139.0" fitWidth="152.0" layoutX="411.0" layoutY="239.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_27.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="679.0" fitWidth="1045.0" layoutX="-2.0" layoutY="-4.0" opacity="0.47" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/img_26.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="232.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUPPLIER MANAGEMENT">
+         <font>
+            <Font name="Serif Bold Italic" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="64.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblSID" layoutX="118.0" layoutY="127.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Text layoutX="396.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock ID :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbStockId" focusColor="#4340a8" layoutX="502.0" layoutY="113.0" prefHeight="32.0" prefWidth="119.0" />
+      <Text layoutX="768.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UID :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbUID" focusColor="#4340a8" layoutX="841.0" layoutY="117.0" prefHeight="32.0" prefWidth="119.0" />
+      <Text layoutX="53.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="399.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="752.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TelNo :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="59.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FCode :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmFCode" focusColor="#4340a8" layoutX="144.0" layoutY="236.0" onAction="#cmbFCodeOnAction" prefHeight="32.0" prefWidth="78.0" />
+      <Text layoutX="503.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="756.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="260.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FName :">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtName" layoutX="144.0" layoutY="189.0" onKeyReleased="#txtNameKeyReleased" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtFName" layoutX="354.0" layoutY="244.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtAddress" layoutX="503.0" layoutY="187.0" onKeyReleased="#txtAddressKeyReleased" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtTelNo" layoutX="841.0" layoutY="186.0" onKeyReleased="#txtTelNoKeyReleased" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtQTY" layoutX="577.0" layoutY="244.0" onAction="#txtQtyOnAction" onKeyReleased="#txtQtyKeyReleased" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtPrice" layoutX="841.0" layoutY="243.0" onKeyReleased="#txtPriceKeyReleased" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: FFE6E6;">
+         <font>
+            <Font name="Serif Regular" size="16.0" />
+         </font></TextField>
+      <TableView fx:id="tblSupplierCart" layoutX="8.0" layoutY="466.0" prefHeight="152.0" prefWidth="1045.0">
+        <columns>
+          <TableColumn fx:id="colName" prefWidth="121.53863906860352" text="Name" />
+          <TableColumn fx:id="colTelNo" minWidth="0.0" prefWidth="150.00018310546875" text="TelNO" />
+            <TableColumn fx:id="colAddress" prefWidth="118.46173095703125" text="Address" />
+            <TableColumn fx:id="colStockId" prefWidth="140.00027465820312" text="StockID" />
+            <TableColumn fx:id="colFCode" prefWidth="146.15411376953125" text="FCode" />
+            <TableColumn fx:id="colQTY" prefWidth="117.69244384765625" text="QTY" />
+            <TableColumn fx:id="colPrice" prefWidth="125.38470458984375" text="Price" />
+            <TableColumn fx:id="colAction" prefWidth="122.30790830911974" text="Action" />
+        </columns>
+      </TableView>
+      <Button fx:id="add" layoutX="981.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="32.0" prefWidth="59.0" style="-fx-background-color: FFC5C5;" text="ADD">
+         <font>
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="update" layoutX="937.0" layoutY="630.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: FFC5C5;" text="UPDATE">
+         <font>
+            <Font name="Serif Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnNew" layoutX="629.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnNewOnAction" style="-fx-background-color: FFC5C5;" text="NEW">
+         <font>
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnNEW" layoutX="57.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnNEWOnAction" style="-fx-background-color: FFC5C5;" text="NEW">
+         <font>
+            <Font name="Serif Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="297.0" layoutY="248.0" opacity="0.14" strokeType="OUTSIDE" strokeWidth="0.0" text="DREAMY FLOWERS">
+         <font>
+            <Font name="Serif Bold" size="35.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

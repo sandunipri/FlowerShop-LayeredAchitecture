@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="order_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f2961e2-9523-40b2-8f66-85a1b18e6e16">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+	<parameter name="orderId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from  `FlowerShop`.`E_OrderDetail` EOD
+join  `FlowerShop`.`E_order` EO 
+on EOD.EO_id = EO.EO_ID
+join  `FlowerShop`.`Event` E
+on E.E_code = EO.E_code
+where EO.EO_ID = $P{orderId}]]>
+	</queryString>
+	<field name="EO_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EO_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="EO_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_OrderDetail"/>
+	</field>
+	<field name="Stock_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Stock_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="Stock_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_OrderDetail"/>
+	</field>
+	<field name="Flower_qty" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="Flower_qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="Flower_qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_OrderDetail"/>
+	</field>
+	<field name="unitPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_OrderDetail"/>
+	</field>
+	<field name="COLUMN_5" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EO_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="EO_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_order"/>
+	</field>
+	<field name="C_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="C_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="C_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_order"/>
+	</field>
+	<field name="E_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="E_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="E_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="E_order"/>
+	</field>
+	<field name="COLUMN_8" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="E_code"/>
+		<property name="com.jaspersoft.studio.field.label" value="E_code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Event"/>
+	</field>
+	<field name="E_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="E_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="E_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Event"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Event"/>
+	</field>
+	<field name="Price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="Price"/>
+		<property name="com.jaspersoft.studio.field.label" value="Price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Event"/>
+	</field>
+	<group name="EO_id">
+		<groupExpression><![CDATA[$F{EO_id}]]></groupExpression>
+	</group>
+	<group name="Stock_id">
+		<groupExpression><![CDATA[$F{Stock_id}]]></groupExpression>
+	</group>
+	<group name="Flower_qty">
+		<groupExpression><![CDATA[$F{Flower_qty}]]></groupExpression>
+	</group>
+	<group name="unitPrice">
+		<groupExpression><![CDATA[$F{unitPrice}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="16" width="100" height="30" uuid="7cc18a40-9ec3-4c96-996c-c0c0965bfb01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Flower Shop]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="100" height="30" uuid="993dc187-28b9-429f-96a8-26cdbb87405f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e236a40-004f-4bad-bd93-7a32fae99de7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<text><![CDATA[EO_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="0" width="100" height="30" uuid="1e32dc71-6020-4d96-8374-ec59b1ecf52d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03e933f4-d91f-4293-a6c9-91d068b7f4d2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<text><![CDATA[E_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="30" uuid="3351561d-9f79-407f-b9b0-5857af1dc257">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c976aec0-0867-41bf-bacc-0fee5523c8e8"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<text><![CDATA[unitPrice]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="cf2ec1b2-1935-4f68-b816-5cb35c6b5665">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2e236a40-004f-4bad-bd93-7a32fae99de7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{EO_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="0" width="100" height="30" uuid="4fedebdd-f73f-4cca-80d8-6820b248a083">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03e933f4-d91f-4293-a6c9-91d068b7f4d2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{E_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="100" height="30" uuid="c8da374a-5611-49ec-ba6f-64747a579281">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c976aec0-0867-41bf-bacc-0fee5523c8e8"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unitPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="6" width="100" height="30" uuid="c0455b5d-4947-4a09-97d4-2aca9550d61e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="253" y="9" width="100" height="30" uuid="f4875288-6957-4b0b-bd89-2ca79cbd686c"/>
+				<textFieldExpression><![CDATA[$F{unitPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

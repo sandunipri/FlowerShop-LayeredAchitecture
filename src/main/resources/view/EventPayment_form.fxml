@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootnodeEventPayment" prefHeight="487.0" prefWidth="428.0" style="-fx-background-color: FFD0EC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.EventPaymentFormController">
+   <children>
+      <Text layoutX="66.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment ID :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="241.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paid Payment :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="270.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="73.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order no :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="278.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbEventOrder" layoutX="48.0" layoutY="220.0" onAction="#cmbEventOrderOnAction" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="txtAmount" layoutX="250.0" layoutY="232.0" prefHeight="25.0" prefWidth="143.0" />
+      <TextField fx:id="txtPaidPayment" layoutX="239.0" layoutY="113.0" onKeyReleased="#txtPaymentKeyReleasedOnAction" prefHeight="25.0" prefWidth="123.0" />
+      <TextField fx:id="txtBalance" layoutX="257.0" layoutY="366.0" onKeyReleased="#txtBalanceKeyReleasedOnAction" prefHeight="25.0" prefWidth="110.0" />
+      <Button fx:id="Add" layoutX="298.0" layoutY="431.0" mnemonicParsing="false" onAction="#btnAddOnAction" style="-fx-background-color: F0EDCF; -fx-background-radius: 20;" text="ADD">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="bill" layoutX="81.0" layoutY="431.0" mnemonicParsing="false" onAction="#btnBillOnAction" style="-fx-background-color: F0EDCF; -fx-background-radius: 20;" text="BILL">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Text layoutX="67.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID : ">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCustomerId" layoutX="48.0" layoutY="366.0" onAction="#txtCusIdOnAction" prefHeight="25.0" prefWidth="167.0" />
+      <Text layoutX="103.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :">
+         <font>
+            <Font name="Serif Regular" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblPaymentId" layoutX="90.0" layoutY="118.0" />
+      <Label fx:id="lblDate" layoutX="176.0" layoutY="32.0" />
+   </children>
+</AnchorPane>

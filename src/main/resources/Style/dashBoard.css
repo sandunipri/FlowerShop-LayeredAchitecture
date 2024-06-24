@@ -1,0 +1,210 @@
+.sideAnchoPane {
+    -fx-background-color: #FFF7FC;
+    -fx-background-radius: 40px;
+    -fx-border-radius: 40px;
+    -fx-border-color: #FDE5EC; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+    -fx-border-style: solid; /* Border style *//* Set background color */
+    -fx-padding: 10px; /* Add padding */
+
+}
+.inner_pane{
+    -fx-background-color: #FFACC7;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #FC819E; /* Border color */
+    -fx-border-width: 2px; /* Border width */
+    -fx-border-style: solid; /* Border style *//* Set background color */
+    -fx-padding: 10px; /* Add padding */
+}
+.home {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+
+    /* Transition for smooth hover effect */
+    -fx-transition: all 0.3s;
+}
+
+/* Hover effect */
+.home:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+
+.dashBoard{
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+
+    /* Transition for smooth hover effect */
+    -fx-transition: all 0.3s;
+}
+
+/* Hover effect */
+.dashBoard:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.EmployeeM{
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+
+    /* Transition for smooth hover effect */
+    -fx-transition: all 0.3s;
+}
+.EmployeeM:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.SupplierM {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.SupplierM:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.CustomerM {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.CustomerM:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.OrderM {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.OrderM:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.about {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.about:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.contact {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.contact:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.service {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.service:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.payment {
+    /* Background color and border */
+    -fx-background-color: #ECF8F9;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+}
+.payment:hover {
+    /* Adjusted background color */
+    -fx-background-color: #FFA1CF;
+    /* Adjusted border color */
+    -fx-border-color: #FF97C1;
+}
+.prograssBar {
+    -fx-background-color: #FAF3F0;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #FFCACC;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+.progress-bar {
+    -fx-accent: #FF71CD; /* Progress color */
+}
+
+/* Indeterminate progress bar */
+.progress-bar:indeterminate {
+    -fx-accent: #FFCACC; /* Progress color */
+}

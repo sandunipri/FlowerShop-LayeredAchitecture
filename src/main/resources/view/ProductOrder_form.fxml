@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeProduct" prefHeight="606.0" prefWidth="773.0" style="-fx-background-color: FFE6E6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.ProductOrderFormController">
+   <children>
+      <Text layoutX="206.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Orders">
+         <font>
+            <Font name="Serif Bold Italic" size="32.0" />
+         </font>
+      </Text>
+      <Label layoutX="17.0" layoutY="95.0" text="Order No :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="157.0" text="Customer TelNo :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="466.0" layoutY="157.0" text="Customer Name:  :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="241.0" text="Product Name:  ">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="252.0" text="Product Code :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="387.0" layoutY="241.0" text="Product price :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="202.0" layoutY="318.0" text="Flower code :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFlowercode" layoutX="170.0" layoutY="347.0" prefHeight="25.0" prefWidth="178.0" />
+      <Label layoutX="21.0" layoutY="319.0" text="Flower Name :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="547.0" layoutY="318.0" text="IsshuedFlowers :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="91.0" text="Date :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="582.0" layoutY="252.0" text="Qty :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQTY" layoutX="579.0" layoutY="275.0" onAction="#txtQtyOnAction" onKeyReleased="#txtQtyKeyReleased" prefHeight="25.0" prefWidth="62.0" />
+      <TextField fx:id="txtProductCode" layoutX="174.0" layoutY="275.0" />
+      <TextField fx:id="txtIsuuedFlower" layoutX="547.0" layoutY="347.0" onKeyReleased="#txtIssuedFlowerKeyReleased" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="txtPrice" layoutX="375.0" layoutY="275.0" prefHeight="25.0" prefWidth="152.0" />
+      <TextField fx:id="txtDate" layoutX="544.0" layoutY="90.0" />
+      <TextField fx:id="txtName" layoutX="466.0" layoutY="188.0" />
+      <JFXComboBox fx:id="cmbProduct" layoutX="17.0" layoutY="275.0" onAction="#cmbProductOnAction" prefHeight="25.0" prefWidth="105.0" />
+      <JFXComboBox fx:id="cmbcustomer" layoutX="9.0" layoutY="188.0" onAction="#cmbCustomerOnAction" prefHeight="25.0" prefWidth="144.0" />
+      <JFXComboBox fx:id="cmbFlower" layoutX="17.0" layoutY="342.0" onAction="#cmbFlowerOnAction" prefHeight="25.0" prefWidth="105.0" />
+      <TableView fx:id="tblproductAdd" layoutX="33.0" layoutY="414.0" prefHeight="123.0" prefWidth="698.0">
+        <columns>
+          <TableColumn fx:id="colProductCode" prefWidth="95.38479804992676" text=" code" />
+          <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="101.53862762451172" text=" name" />
+            <TableColumn fx:id="colqty" prefWidth="104.61553955078125" text="QTY" />
+            <TableColumn fx:id="colprice" prefWidth="145.38482666015625" text="Price" />
+            <TableColumn fx:id="colTotal" prefWidth="113.0771484375" text="Total" />
+            <TableColumn fx:id="colAction" prefWidth="136.92340087890625" text="Action" />
+        </columns>
+      </TableView>
+      <Button fx:id="placeOrder" layoutX="635.0" layoutY="558.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: FFC5C5;" text="PlaceOrder">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="add" layoutX="693.0" layoutY="372.0" mnemonicParsing="false" onAction="#btnAddOnAction" style="-fx-background-color: FFC5C5;" text="ADD">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label layoutX="249.0" layoutY="157.0" text="Customer ID :">
+         <font>
+            <Font name="Sarai" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="242.0" layoutY="188.0" />
+      <Label layoutX="43.0" layoutY="564.0" text="Total Price :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="389.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock_id :" />
+      <JFXComboBox fx:id="cmbStock" layoutX="382.0" layoutY="342.0" onAction="#cmbStockOnAction" prefHeight="25.0" prefWidth="101.0" />
+      <Button fx:id="btnPayment" layoutX="494.0" layoutY="558.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" style="-fx-background-color: FFC5C5;" text="payment">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button layoutX="693.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnNEWOnAnction" style="-fx-background-color: FFC5C5;" text="NEW" />
+      <Button layoutX="693.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnnewOnAction" style="-fx-background-color: FFC5C5;" text="NEW" />
+      <Label fx:id="lblOrder" layoutX="105.0" layoutY="99.0">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblnettotal" layoutX="160.0" layoutY="566.0" />
+   </children>
+</AnchorPane>
