@@ -1,6 +1,7 @@
 package lk.ijse.FlowerShop.dao.custom.impl;
 
 import lk.ijse.FlowerShop.dao.SQLUtill;
+import lk.ijse.FlowerShop.dao.custom.EmployeeDAO;
 import lk.ijse.FlowerShop.db.DbConnection;
 import lk.ijse.FlowerShop.dto.EmployeeDTO;
 import lk.ijse.FlowerShop.entity.Employee;
@@ -15,8 +16,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeDAOImpl {
-    public static List<String> getEid() throws SQLException, ClassNotFoundException {
+public class EmployeeDAOImpl implements EmployeeDAO {
+    public  List<String> getEid() throws SQLException, ClassNotFoundException {
       /*  String sql = "SELECT E_id FROM Employee";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);*/
@@ -30,7 +31,7 @@ public class EmployeeDAOImpl {
         }
         return IDList;
     }
-    public static EmployeeDTO searchByID(String E_id) throws SQLException, ClassNotFoundException {
+    public  EmployeeDTO searchByID(String E_id) throws SQLException, ClassNotFoundException {
       /*  String sql = "SELECT * FROM Employee WHERE E_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -53,7 +54,7 @@ public class EmployeeDAOImpl {
 
     }
 
-    public static boolean add(EmployeeDTO employee) throws SQLException, ClassNotFoundException {
+    public  boolean add(EmployeeDTO employee) throws SQLException, ClassNotFoundException {
 /*            String sql = "INSERT INTO Employee VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -74,7 +75,7 @@ public class EmployeeDAOImpl {
         return SQLUtill.execute("INSERT INTO Employee VALUES (?, ?, ?, ?, ?, ?, ?)",employee.getEid(),employee.getUid(),employee.getEname(),employee.getAddress(),employee.getEmail(),employee.getJobRole(),employee.getTelNo());
     }
 
-    public static boolean update(EmployeeDTO employee) throws SQLException, ClassNotFoundException {
+    public  boolean update(EmployeeDTO employee) throws SQLException, ClassNotFoundException {
       /*  String sql = "UPDATE Employee SET U_id = ?, E_name = ?, Address = ?,Email = ?,JobRole = ?, TelNo = ? WHERE E_id = ?";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -96,7 +97,7 @@ public class EmployeeDAOImpl {
         return SQLUtill.execute( "UPDATE Employee SET U_id = ?, E_name = ?, Address = ?,Email = ?,JobRole = ?, TelNo = ? WHERE E_id = ?",employee.getUid(),employee.getEname(),employee.getAddress(),employee.getEmail(),employee.getJobRole(),employee.getTelNo(),employee.getEid());
     }
 
-    public static boolean delete(String eid) throws SQLException, ClassNotFoundException {
+    public  boolean delete(String eid) throws SQLException, ClassNotFoundException {
 
        /* String sql = "DELETE FROM Employee WHERE E_id = ?";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -113,7 +114,7 @@ public class EmployeeDAOImpl {
         return SQLUtill.execute( "DELETE FROM Employee WHERE E_id = ?",eid);
     }
 
-    public static List<Employee> getAll() throws SQLException, ClassNotFoundException {
+    public  List<Employee> getAll() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM Employee";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -140,7 +141,7 @@ public class EmployeeDAOImpl {
 
     }
 
-    public static String currentId() throws SQLException, ClassNotFoundException {
+    public  String currentId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT E_id FROM Employee ORDER BY CAST(SUBSTRING(E_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
