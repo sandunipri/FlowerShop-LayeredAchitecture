@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="335.0" prefWidth="261.0" style="-fx-background-color: FFE6E6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.FlowerFormContriller">
+<AnchorPane prefHeight="335.0" prefWidth="261.0" style="-fx-background-color: FFE6E6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.FlowerFormContriller">
    <children>
       <Text layoutX="41.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Flower">
          <font>

@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane fx:id="rootNodeAbout" prefHeight="713.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.AboutFormController">
+<AnchorPane fx:id="rootNodeAbout" prefHeight="713.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.AboutFormController">
    <children>
       <Text fill="#7b0b49" layoutX="167.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Dreamy Flowers">
          <font>

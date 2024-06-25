@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.AddproductEventFormController">
+<AnchorPane prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.AddproductEventFormController">
    <children>
       <Button fx:id="addProduct" layoutX="194.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnAddProductOnAction" style="-fx-background-color: F8F4E1; -fx-background-radius: 20;" text="ADD PRODUCT">
          <font>

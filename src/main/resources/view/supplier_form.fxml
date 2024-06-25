@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNodeS" prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.FlowerShop.controller.SupplierFormController">
+<AnchorPane fx:id="rootNodeS" prefHeight="673.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.SupplierFormController">
    <children>
       <ImageView fitHeight="139.0" fitWidth="152.0" layoutX="411.0" layoutY="239.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
          <image>
