@@ -1,14 +1,16 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.EventPaymentDAO;
 import lk.ijse.pos.entity.EventPayment;
 /*import lk.ijse.FlowerShop.entity.EventPlace;
 import lk.ijse.FlowerShop.model.EventPayment;*/
 
 import java.sql.*;
 
-public class EventPaymentDAOImpl {
-    public static String currentId() throws SQLException, ClassNotFoundException {
+public class EventPaymentDAOImpl implements EventPaymentDAO {
+    @Override
+    public  String currentId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT PaymentId FROM EventPayment ORDER BY PaymentId desc LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -21,7 +23,8 @@ public class EventPaymentDAOImpl {
         return null;
     }
 
-    public static boolean add(EventPayment eventPayment) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean add(EventPayment eventPayment) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO EventPayment VALUES (?, ?, ?, ?, ?, ?,?)";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -50,7 +53,8 @@ public class EventPaymentDAOImpl {
                 eventPayment.getBalance());
     }
 
-    public static String CurrentId() throws SQLException, ClassNotFoundException {
+    @Override
+    public String CurrentId() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT PaymentId FROM EventPayment ORDER BY CAST(SUBSTRING(PaymentId, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();

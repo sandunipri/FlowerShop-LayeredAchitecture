@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.ProductOrderDAO;
 import lk.ijse.pos.entity.ProductOrder;
 /*
 import lk.ijse.FlowerShop.model.*;
@@ -11,8 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductOrderDAOImpl {
-    public static String currentId() throws SQLException, ClassNotFoundException {
+public class ProductOrderDAOImpl implements ProductOrderDAO {
+    public  String currentId() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT PO_id FROM P_order ORDER BY CAST(SUBSTRING(PO_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -25,7 +26,7 @@ public class ProductOrderDAOImpl {
         return null;
     }
 
-    public static boolean save(ProductOrder productOrder) throws SQLException, ClassNotFoundException {
+    public  boolean save(ProductOrder productOrder) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO P_order VALUES(?, ?)";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -37,7 +38,7 @@ public class ProductOrderDAOImpl {
         return SQLUtill.execute("INSERT INTO P_order VALUES(?, ?)",productOrder.getPOID(),productOrder.getCID());
     }
 
-    public static List<String> getid() {
+    public  List<String> getid() {
 
        // String sql = "SELECT PO_id FROM P_order ORDER BY PO_id desc LIMIT 1";
         List<String> list = new ArrayList<>();
@@ -54,7 +55,7 @@ public class ProductOrderDAOImpl {
         return list;
     }
 
-    public static ProductOrder searchByPOID(String id) throws SQLException, ClassNotFoundException {
+    public  ProductOrder searchByPOID(String id) throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT * FROM P_order WHERE PO_id= ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 

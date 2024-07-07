@@ -1,6 +1,8 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.ProductOrderDetailDAO;
+import lk.ijse.pos.dao.custom.ProductPaymentDAO;
 import lk.ijse.pos.entity.ProductOrderDetail;
 /*
 import lk.ijse.FlowerShop.model.ProductOrderDetail;
@@ -9,8 +11,9 @@ import lk.ijse.FlowerShop.model.ProductOrderDetail;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ProductOrderDetailDAOImpl {
-    public static boolean save(List<ProductOrderDetail> productOrderDetailList) throws SQLException, ClassNotFoundException {
+public class ProductOrderDetailDAOImpl implements ProductOrderDetailDAO {
+    @Override
+    public  boolean save(List<ProductOrderDetail> productOrderDetailList) throws SQLException, ClassNotFoundException {
 
         for (ProductOrderDetail productOrderDetail: productOrderDetailList) {
             if(!saved(productOrderDetail)) {
@@ -19,8 +22,8 @@ public class ProductOrderDetailDAOImpl {
         }
         return true;
     }
-
-    private static boolean saved(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean saved(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
 
        /* String sql = "INSERT INTO P_OrderDetail VALUES(?, ?, ?, ?, ?, ?, ?)";
 

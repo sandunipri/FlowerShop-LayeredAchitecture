@@ -8,11 +8,7 @@ import java.util.List;
 public interface EventOrderDAO {
 
     public  String currentId() throws SQLException, ClassNotFoundException ;
-
     public  boolean save(EventOrder eventOrder) throws SQLException, ClassNotFoundException ;
-
-
     public List<String> getid() ;
-
-    public  EventOrder searchByPOID(String id) throws SQLException, ClassNotFoundException ;
+    EventOrder searchByPOID(String id) throws SQLException, ClassNotFoundException ;
 }

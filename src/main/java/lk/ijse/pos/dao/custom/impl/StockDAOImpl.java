@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.StockDAO;
 import lk.ijse.pos.entity.EventOrderDetail;
 import lk.ijse.pos.entity.ProductOrderDetail;
 import lk.ijse.pos.entity.Stock;
@@ -12,8 +13,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StockDAOImpl {
-    public static boolean add(Stock stock) throws SQLException, ClassNotFoundException {
+public class StockDAOImpl implements StockDAO {
+    @Override
+    public boolean add(Stock stock) throws SQLException, ClassNotFoundException {
         /*String sql = "INSERT INTO Stock (Stock_id, F_code, QtyOnHand) VALUES (?, ?, ?, )";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -35,7 +37,8 @@ public class StockDAOImpl {
 
     }
 
-    public static List<String> getCodes() throws SQLException, ClassNotFoundException {
+    @Override
+    public List<String> getCodes() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT Stock_id FROM Stock";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
@@ -51,7 +54,8 @@ public class StockDAOImpl {
         return codeList;
     }
 
-    public static Stock searchById(String stockID) throws SQLException, ClassNotFoundException {
+    @Override
+    public Stock searchById(String stockID) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM Stock WHERE Stock_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -69,7 +73,8 @@ public class StockDAOImpl {
         }
         return null;
     }
-    public static boolean UpdateQTY(List<Supplier> supplierList) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean UpdateQTY(List<Supplier> supplierList) throws SQLException, ClassNotFoundException {
         for (Supplier supplier : supplierList) {
             if(!UpdateQTY(supplier)) {
                 return false;
@@ -78,9 +83,13 @@ public class StockDAOImpl {
         return true;
     }
 
-    public static boolean UpdateQTY(Supplier supplier) throws SQLException, ClassNotFoundException {
-/*
+    @Override
+    public boolean UpdateQTY(Supplier supplier) throws SQLException, ClassNotFoundException {
+/*@Override
+
+    @Override
         String sql = "UPDATE Stock SET QtyOnHand = QtyOnHand + ? WHERE Stock_id = ?";
+    @Override
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
 
@@ -91,7 +100,8 @@ public class StockDAOImpl {
         return SQLUtill.execute("UPDATE Stock SET QtyOnHand = QtyOnHand + ? WHERE Stock_id = ?",supplier.getQTY(),supplier.getStockID());
     }
 
-    public static boolean Updateqty(List<ProductOrderDetail> productOrderDetailList) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean Updateqty(List<ProductOrderDetail> productOrderDetailList) throws SQLException, ClassNotFoundException {
 
         for (ProductOrderDetail productOrderDetail : productOrderDetailList) {
             if(!Updateqty(productOrderDetail)) {
@@ -100,7 +110,8 @@ public class StockDAOImpl {
         }
         return true;
     }
-    public static boolean Updateqty(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean Updateqty(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
 
        /* String sql = "UPDATE Stock SET QtyOnHand = QtyOnHand - ? WHERE Stock_id = ?";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -113,7 +124,8 @@ public class StockDAOImpl {
         return SQLUtill.execute("UPDATE Stock SET QtyOnHand = QtyOnHand - ? WHERE Stock_id = ?",productOrderDetail.getIssuedFlowers(),productOrderDetail.getStockID());
     }
 
-    public static boolean UPDATEQTY(List<EventOrderDetail> eventOrderDetailList) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean UPDATEQTY(List<EventOrderDetail> eventOrderDetailList) throws SQLException, ClassNotFoundException {
         for (EventOrderDetail eventOrderDetail : eventOrderDetailList) {
             if(!UPDATEQTY(eventOrderDetail)) {
                 return false;
@@ -122,7 +134,8 @@ public class StockDAOImpl {
         return true;
     }
 
-    public static boolean UPDATEQTY(EventOrderDetail eventOrderDetail) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean UPDATEQTY(EventOrderDetail eventOrderDetail) throws SQLException, ClassNotFoundException {
 
       /*  String sql = "UPDATE Stock SET QtyOnHand = QtyOnHand - ? WHERE Stock_id = ?";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -135,8 +148,8 @@ public class StockDAOImpl {
         return SQLUtill.execute("UPDATE Stock SET QtyOnHand = QtyOnHand - ? WHERE Stock_id = ?",eventOrderDetail.getIssuedFlowers(),eventOrderDetail.getStockID());
     }
 
-
-    public static boolean ADD(Stock stock) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean ADD(Stock stock) throws SQLException, ClassNotFoundException {
         /*String sql = "INSERT INTO Stock VALUES (?, ?,?)";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -153,7 +166,8 @@ public class StockDAOImpl {
         return SQLUtill.execute("INSERT INTO Stock VALUES (?, ?,?)",stock.getStockId(),stock.getFCode(),stock.getQtyOnHand());
     }
 
-    public static boolean delete(String stockid) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean delete(String stockid) throws SQLException, ClassNotFoundException {
         String sql = "DELETE FROM Stock WHERE Stock_id = ?";
         /*PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 

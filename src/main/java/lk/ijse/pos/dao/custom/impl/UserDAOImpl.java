@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.UserDAO;
 import lk.ijse.pos.entity.User;
 /*
 import lk.ijse.FlowerShop.model.User;
@@ -11,9 +12,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAOImpl {
+public class UserDAOImpl implements UserDAO {
 
-    public static List<String> getId() throws SQLException, ClassNotFoundException {
+    @Override
+    public  List<String> getId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT U_id FROM User";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -28,8 +30,8 @@ public class UserDAOImpl {
         return IDlist;
     }
 
-
-    public static User searchByID(String id) throws SQLException, ClassNotFoundException {
+    @Override
+    public  User searchByID(String id) throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT * FROM User WHERE U_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -48,7 +50,8 @@ public class UserDAOImpl {
         return null;
     }
 
-    public static boolean update(User user) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean update(User user) throws SQLException, ClassNotFoundException {
        /* String sql = "UPDATE User SET U_name = ?, U_password = ? WHERE U_id = ?";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);

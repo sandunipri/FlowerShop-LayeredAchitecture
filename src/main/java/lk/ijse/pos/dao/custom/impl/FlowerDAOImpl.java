@@ -1,21 +1,19 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.FlowerDAO;
 import lk.ijse.pos.entity.Flower;
 /*import lk.ijse.FlowerShop.model.Flower;*/
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlowerDAOImpl {
-
-    public static List<String> getFcode() throws SQLException, ClassNotFoundException {
-       /* String sql = "SELECT F_code FROM Flower";
-
-        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
-*/
+public class FlowerDAOImpl implements FlowerDAO {
+    @Override
+    public List<String> getFcode() throws SQLException, ClassNotFoundException {
         List<String> CodeList = new ArrayList<>();
 
         ResultSet resultSet = SQLUtill.execute("SELECT F_code FROM Flower");
@@ -26,7 +24,8 @@ public class FlowerDAOImpl {
         return CodeList;
     }
 
-    public static Flower searchByCode(String Fcode) throws SQLException, ClassNotFoundException {
+    @Override
+    public  Flower searchByCode(String Fcode) throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT * FROM Flower WHERE F_code = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -42,7 +41,8 @@ public class FlowerDAOImpl {
         return null;
     }
 
-    public static Flower searchByName(String name) throws SQLException, ClassNotFoundException {
+    @Override
+    public  Flower searchByName(String name) throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT * FROM Flower WHERE F_name = ?";
 
         PreparedStatement preparedStatement= DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -59,7 +59,8 @@ public class FlowerDAOImpl {
         return null;
     }
 
-    public static List<String> getFlowerName() throws SQLException, ClassNotFoundException {
+    @Override
+    public  List<String> getFlowerName() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT F_name FROM Flower";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -74,7 +75,8 @@ public class FlowerDAOImpl {
         return nameList;
     }
 
-    public static String currentCode() throws SQLException, ClassNotFoundException {
+    @Override
+    public  String currentCode() throws SQLException, ClassNotFoundException {
       /*  String sql = "SELECT F_code FROM Flower ORDER BY CAST(SUBSTRING(F_code, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -87,23 +89,14 @@ public class FlowerDAOImpl {
         return null;
     }
 
-    public static boolean add(Flower flower) throws SQLException, ClassNotFoundException {
-       /* String sql = "INSERT INTO Flower VALUES (?, ?)";
-        PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
+    @Override
+    public  boolean add(Flower flower) throws SQLException, ClassNotFoundException {
 
-        preparedStatement.setString(1, flower.getFCode());
-        preparedStatement.setString(2, flower.getFName());
-
-        int affectedRows = preparedStatement.executeUpdate();
-        if (affectedRows > 0) {
-            return true;
-        } else {
-            return false;
-        }*/
         return SQLUtill.execute("INSERT INTO Flower VALUES (?, ?)", flower.getFCode(), flower.getFName());
     }
 
-    public static boolean delete(String fcode) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean delete(String fcode) throws SQLException, ClassNotFoundException {
         /*String sql = "DELETE FROM Flower WHERE F_code = ?";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 

@@ -10,8 +10,8 @@ import lk.ijse.FlowerShop.model.EventPlace;
 
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
+import java.sql.SQLException;
 public class EventPlaceDAOImpl {
     public static boolean update(EventPlace eventPlace) throws SQLException {
             Connection connection = DbConnection.getInstance().getConnection();

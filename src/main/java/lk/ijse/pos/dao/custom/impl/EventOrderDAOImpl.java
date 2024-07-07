@@ -25,7 +25,6 @@ public class EventOrderDAOImpl implements EventOrderDAO {
         }
         return null;
     }
-
     @Override
     public  boolean save(EventOrder eventOrder) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO E_order VALUES(?, ?, ?,?)";
@@ -39,8 +38,6 @@ public class EventOrderDAOImpl implements EventOrderDAO {
         return preparedStatement.executeUpdate() > 0;*/
         return SQLUtill.execute("INSERT INTO E_order VALUES(?, ?, ?,?)",eventOrder.getEOID(),eventOrder.getCID(),eventOrder.getEcode(),eventOrder.getAmount());
     }
-
-
     @Override
     public  List<String> getid() {
         //String sql = "SELECT EO_id FROM E_order ORDER BY EO_id desc LIMIT 1";
@@ -58,7 +55,6 @@ public class EventOrderDAOImpl implements EventOrderDAO {
         }
         return list;
     }
-
     @Override
     public  EventOrder searchByPOID(String id) throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT * FROM E_order WHERE EO_id = ?";

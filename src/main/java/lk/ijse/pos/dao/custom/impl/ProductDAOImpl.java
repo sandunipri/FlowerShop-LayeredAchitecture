@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.ProductDAO;
 import lk.ijse.pos.entity.Product;
 /*
 import lk.ijse.FlowerShop.model.Product;
@@ -11,8 +12,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDAOImpl {
-    public static List<String> getProductName() throws SQLException, ClassNotFoundException {
+public class ProductDAOImpl implements ProductDAO {
+    @Override
+    public  List<String> getProductName() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT P_name FROM Product";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 */
@@ -26,7 +28,8 @@ public class ProductDAOImpl {
         return nameList;
     }
 
-    public static Product searchByName(String name) throws SQLException, ClassNotFoundException {
+    @Override
+    public  Product searchByName(String name) throws SQLException, ClassNotFoundException {
 
         /*String sql = "SELECT * FROM Product WHERE P_name = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -61,7 +64,8 @@ public class ProductDAOImpl {
         return null;
     }*/
 
-    public static String currentId() throws SQLException, ClassNotFoundException {
+    @Override
+    public  String currentId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT P_code FROM Product ORDER BY CAST(SUBSTRING(P_code, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -74,7 +78,8 @@ public class ProductDAOImpl {
         return null;
     }
 
-    public static boolean add(Product product) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean add(Product product) throws SQLException, ClassNotFoundException {
       /*  String sql = "INSERT INTO Product VALUES (?, ?, ?) ";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -91,7 +96,8 @@ public class ProductDAOImpl {
         return SQLUtill.execute("INSERT INTO Product VALUES (?,?,?)", product.getPCode(), product.getPName(), product.getPrice());
     }
 
-    public static boolean delete(String pcode) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean delete(String pcode) throws SQLException, ClassNotFoundException {
         /*String sql = "DELETE FROM Product WHERE P_code = ?";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 

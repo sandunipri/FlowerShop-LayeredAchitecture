@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.ProductPaymentDAO;
 import lk.ijse.pos.entity.ProductPayment;
 /*
 import lk.ijse.FlowerShop.model.ProductPayment;
@@ -8,8 +9,9 @@ import lk.ijse.FlowerShop.model.ProductPayment;
 
 import java.sql.*;
 
-public class ProductPaymentDAOImpl {
-    public static String currentId() throws SQLException, ClassNotFoundException {
+public class ProductPaymentDAOImpl implements ProductPaymentDAO {
+    @Override
+    public  String currentId() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT PaymentId FROM ProductPayment ORDER BY CAST(SUBSTRING(PaymentId, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -22,7 +24,8 @@ public class ProductPaymentDAOImpl {
         return null;
     }
 
-    public static boolean add(ProductPayment productPayment) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean add(ProductPayment productPayment) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO ProductPayment VALUES (?, ?, ?, ?, ?, ?,?)";
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
 

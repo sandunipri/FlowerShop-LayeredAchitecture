@@ -1,6 +1,7 @@
 package lk.ijse.pos.dao.custom.impl;
 
 import lk.ijse.pos.dao.SQLUtill;
+import lk.ijse.pos.dao.custom.SupplierDAO;
 import lk.ijse.pos.entity.Supplier;
 /*import lk.ijse.FlowerShop.model.Supplier;*/
 
@@ -8,9 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class SupplierDAOImpl {
+public class SupplierDAOImpl implements SupplierDAO {
 
-    public static String currentSId() throws SQLException, ClassNotFoundException {
+    @Override
+    public  String currentSId() throws SQLException, ClassNotFoundException {
         /*String sql = "SELECT S_id FROM Supplier ORDER BY CAST(SUBSTRING(S_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -23,7 +25,8 @@ public class SupplierDAOImpl {
         return null;
     }
 
-    public static boolean save(Supplier supplierList) throws SQLException, ClassNotFoundException {
+    @Override
+    public  boolean save(Supplier supplierList) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO Supplier VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -51,7 +54,8 @@ public class SupplierDAOImpl {
                 supplierList.getPrice());
 
     }
-   public static boolean save(List<Supplier> supplierList) throws SQLException, ClassNotFoundException {
+   @Override
+   public  boolean save(List<Supplier> supplierList) throws SQLException, ClassNotFoundException {
         for (Supplier supplier : supplierList) {
             if(!save(supplier)) {
                 return false;

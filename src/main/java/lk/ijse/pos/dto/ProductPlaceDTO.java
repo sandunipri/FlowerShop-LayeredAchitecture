@@ -9,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class productPlaceDTO {
+public class ProductPlaceDTO {
     private ProductOrderDTO productOrder;
 
     private List<ProductOrderDetailDTO>productOrderDetailList;
