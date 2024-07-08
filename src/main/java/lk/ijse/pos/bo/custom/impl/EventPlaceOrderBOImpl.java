@@ -1,21 +1,11 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EventPlaceOrderBO;
-import lk.ijse.pos.dao.custom.EventOrderDAO;
-import lk.ijse.pos.dao.custom.EventOrderDetailDAO;
-import lk.ijse.pos.dao.custom.EventPaymentDAO;
-import lk.ijse.pos.dao.custom.StockDAO;
-import lk.ijse.pos.dao.custom.impl.EventOrderDAOImpl;
-import lk.ijse.pos.dao.custom.impl.EventOrderDetailDAOImpl;
-import lk.ijse.pos.dao.custom.impl.EventPaymentDAOImpl;
-import lk.ijse.pos.dao.custom.impl.StockDAOImpl;
+import lk.ijse.pos.dao.custom.*;
+import lk.ijse.pos.dao.custom.impl.*;
 import lk.ijse.pos.db.DbConnection;
-import lk.ijse.pos.dto.EventOrderDTO;
-import lk.ijse.pos.dto.EventOrderDetailDTO;
-import lk.ijse.pos.dto.EventPlaceDTO;
-import lk.ijse.pos.entity.EventOrder;
-import lk.ijse.pos.entity.EventOrderDetail;
-import lk.ijse.pos.entity.EventPlace;
+import lk.ijse.pos.dto.*;
+import lk.ijse.pos.entity.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -25,8 +15,10 @@ import java.util.List;
 public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
     EventOrderDAO eventOrderDAO = new EventOrderDAOImpl();
     EventOrderDetailDAO eventOrderDetailDAO = new EventOrderDetailDAOImpl();
-
+    FlowerDAO flowerDAO = new FlowerDAOImpl();
     StockDAO stockDAO = new StockDAOImpl();
+    EventDAO eventDAO = new EventDAOImpl();
+    CustomerDAO customerDAO = new CustomerDAOImpl();
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {
         return eventOrderDAO.currentId();
@@ -50,7 +42,7 @@ public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
 
     @Override
     public EventOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException {
-        EventOrder eventOrder = new EventOrder();
+        EventOrder eventOrder = eventOrderDAO.searchByPOID(id);
         EventOrderDTO eventOrderDTO = new EventOrderDTO(
 
                 eventOrder.getEOID(),
@@ -126,5 +118,60 @@ public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
         }finally {
             connection.setAutoCommit(true);
         }
+    }
+
+    @Override
+    public List<String> getCodes() throws SQLException, ClassNotFoundException {
+        return stockDAO.getCodes();
+    }
+
+    @Override
+    public List<String> getFlowerName() throws SQLException, ClassNotFoundException {
+        return flowerDAO.getFlowerName();
+    }
+
+    @Override
+    public List<String> getNames() throws SQLException, ClassNotFoundException {
+       return eventDAO.getNames();
+    }
+
+    @Override
+    public List<String> getTelNo() throws SQLException, ClassNotFoundException {
+       return customerDAO.getTelNo();
+    }
+
+    @Override
+    public EventDTO searchByName(String name) throws SQLException, ClassNotFoundException {
+        Event event = eventDAO.searchByName(name);
+        EventDTO eventDTO = new EventDTO(
+                event.getEID(),
+                event.getEName(),
+                event.getEDate(),
+                event.getPrice()
+        );
+        return eventDTO;
+    }
+
+    @Override
+    public FlowerDTO searchByFlowerName(String name) throws SQLException, ClassNotFoundException {
+        Flower flower = flowerDAO.searchByFlowerName(name);
+        FlowerDTO flowerDTO = new FlowerDTO(
+                flower.getFCode(),
+                flower.getFName()
+        );
+        return flowerDTO;
+    }
+
+    @Override
+    public CustomerDTO searchByTelNo(String telNo) throws SQLException, ClassNotFoundException {
+       Customer customer = customerDAO.searchByTelNo(telNo);
+       CustomerDTO customerDTO = new CustomerDTO(
+               customer.getCid(),
+               customer.getUid(),
+               customer.getCname(),
+               customer.getTelNo(),
+               customer.getAddress()
+       );
+       return customerDTO;
     }
 }

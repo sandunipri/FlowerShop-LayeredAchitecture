@@ -14,4 +14,19 @@ public interface EventPlaceOrderBO {
     public EventOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException ;
     public   boolean saveOD(EventOrderDetailDTO eventOrderDetailDTO) throws SQLException, ClassNotFoundException ;
     boolean updateEvent(EventPlaceDTO eventPlace) throws SQLException;
+
+    List<String> getCodes() throws SQLException, ClassNotFoundException;
+
+
+    List<String> getFlowerName() throws SQLException, ClassNotFoundException;
+
+    List<String> getNames() throws SQLException, ClassNotFoundException;
+
+    List<String> getTelNo() throws SQLException, ClassNotFoundException;
+
+    EventDTO searchByName(String name) throws SQLException, ClassNotFoundException;
+
+    FlowerDTO searchByFlowerName(String name) throws SQLException, ClassNotFoundException;
+
+    CustomerDTO searchByTelNo(String telNo) throws SQLException, ClassNotFoundException;
 }

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom;
 
 import lk.ijse.pos.dto.CustomerDTO;
+import lk.ijse.pos.dto.UserDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,4 +16,6 @@ public interface CustomerBO {
     CustomerDTO searchByTelNo(String telNo) throws SQLException, ClassNotFoundException;
     List<CustomerDTO> getAll() throws SQLException, ClassNotFoundException;
     String currentId() throws SQLException, ClassNotFoundException;
+    List<String> getUserId() throws SQLException, ClassNotFoundException;
+    UserDTO searchByuserID(String id) throws SQLException, ClassNotFoundException;
 }

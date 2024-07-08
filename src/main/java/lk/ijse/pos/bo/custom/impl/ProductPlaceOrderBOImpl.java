@@ -1,18 +1,11 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.ProductPlaceOrderBO;
-import lk.ijse.pos.dao.custom.ProductOrderDAO;
-import lk.ijse.pos.dao.custom.ProductOrderDetailDAO;
-import lk.ijse.pos.dao.custom.StockDAO;
-import lk.ijse.pos.dao.custom.impl.ProductOrderDAOImpl;
-import lk.ijse.pos.dao.custom.impl.ProductOrderDetailDAOImpl;
-import lk.ijse.pos.dao.custom.impl.StockDAOImpl;
+import lk.ijse.pos.dao.custom.*;
+import lk.ijse.pos.dao.custom.impl.*;
 import lk.ijse.pos.db.DbConnection;
-import lk.ijse.pos.dto.ProductOrderDTO;
-import lk.ijse.pos.dto.ProductOrderDetailDTO;
-import lk.ijse.pos.dto.ProductPlaceDTO;
-import lk.ijse.pos.entity.ProductOrder;
-import lk.ijse.pos.entity.ProductOrderDetail;
+import lk.ijse.pos.dto.*;
+import lk.ijse.pos.entity.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +16,12 @@ public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
 
     ProductOrderDetailDAO productOrderDetailDAO = new ProductOrderDetailDAOImpl();
     ProductOrderDAO productOrderDAO = new ProductOrderDAOImpl();
+
+    ProductDAO productDAO = new ProductDAOImpl();
     StockDAO stockDAO = new StockDAOImpl();
+    FlowerDAO flowerDAO = new FlowerDAOImpl();
+    CustomerDAO customerDAO = new CustomerDAOImpl();
+
 
     @Override
     public boolean save(List<ProductOrderDetailDTO> productOrderDetailList) throws SQLException, ClassNotFoundException {
@@ -108,5 +106,59 @@ public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
                 connection.setAutoCommit(true);
             }
 
+    }
+
+    @Override
+    public List<String> getStockCodes() throws SQLException, ClassNotFoundException {
+        return stockDAO.getCodes();
+    }
+
+    @Override
+    public List<String> getFlowerName() throws SQLException, ClassNotFoundException {
+        return flowerDAO.getFlowerName();
+    }
+
+    @Override
+    public List<String> getProductName() throws SQLException, ClassNotFoundException {
+        return productDAO.getProductName();
+    }
+
+    @Override
+    public List<String> getTelNo() throws SQLException, ClassNotFoundException {
+        return customerDAO.getTelNo();
+    }
+
+    @Override
+    public CustomerDTO searchByTelNo(String telNo) throws SQLException, ClassNotFoundException {
+        Customer customer = customerDAO.searchByTelNo(telNo);
+        CustomerDTO customerDTO = new CustomerDTO(
+                customer.getCid(),
+                customer.getUid(),
+                customer.getCname(),
+                customer.getAddress(),
+                customer.getTelNo()
+        );
+        return customerDTO;
+           }
+
+    @Override
+    public ProductDTO searchByName(String name) throws SQLException, ClassNotFoundException {
+        Product product = productDAO.searchByName(name);
+        ProductDTO productDTO = new ProductDTO(
+                product.getPCode(),
+                product.getPName(),
+                product.getPrice()
+        );
+        return productDTO;
+    }
+
+    @Override
+    public FlowerDTO searchByFlowerName(String name) throws SQLException, ClassNotFoundException {
+        Flower flower = flowerDAO.searchByFlowerName(name);
+        FlowerDTO flowerDTO = new FlowerDTO(
+                flower.getFCode(),
+                flower.getFName()
+        );
+        return flowerDTO;
     }
 }

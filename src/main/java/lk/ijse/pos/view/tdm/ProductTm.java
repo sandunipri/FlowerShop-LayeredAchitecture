@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class productTm {
+public class ProductTm {
     private String code;
     private String Name;
     private int qty;
@@ -21,7 +21,7 @@ public class productTm {
     private String StockID;
     private int issuedFlowers;
 
-    public productTm(String code, String name, int qty, double price, double total, JFXButton btnRemove) {
+    public ProductTm(String code, String name, int qty, double price, double total, JFXButton btnRemove) {
         this.code = code;
         Name = name;
         this.qty = qty;
@@ -33,7 +33,7 @@ public class productTm {
     //        productTm cartTm = new productTm(code,Name, (int) qty, Price, total, btnRemove,issuedFlower,stockId);
 
 
-    public productTm(String code, String name, int qty, double price, double total, JFXButton btnRemove, String stockID, int issuedFlowers,String POID) {
+    public ProductTm(String code, String name, int qty, double price, double total, JFXButton btnRemove, String stockID, int issuedFlowers, String POID) {
         this.code = code;
         Name = name;
         this.qty = qty;

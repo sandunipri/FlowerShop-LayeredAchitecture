@@ -20,4 +20,18 @@ public interface ProductPlaceOrderBO {
 
     public  ProductOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException ;
      boolean update(ProductPlaceDTO productPlace) throws SQLException;
+
+    List<String> getStockCodes() throws SQLException, ClassNotFoundException;
+
+    List<String> getFlowerName() throws  SQLException, ClassNotFoundException;
+
+    List<String> getProductName() throws SQLException, ClassNotFoundException;
+
+    List<String> getTelNo() throws SQLException, ClassNotFoundException;
+
+    CustomerDTO searchByTelNo(String telNo) throws SQLException, ClassNotFoundException;
+
+    ProductDTO searchByName(String name) throws SQLException, ClassNotFoundException;
+
+    FlowerDTO searchByFlowerName(String name) throws SQLException, ClassNotFoundException;
 }

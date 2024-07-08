@@ -1,15 +1,25 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EventPaymentBO;
+import lk.ijse.pos.dao.custom.EventOrderDAO;
 import lk.ijse.pos.dao.custom.EventPaymentDAO;
+import lk.ijse.pos.dao.custom.impl.EventOrderDAOImpl;
 import lk.ijse.pos.dao.custom.impl.EventPaymentDAOImpl;
+import lk.ijse.pos.dto.EmployeeDTO;
+import lk.ijse.pos.dto.EventOrderDTO;
 import lk.ijse.pos.dto.EventPaymentDTO;
+import lk.ijse.pos.entity.EventOrder;
 import lk.ijse.pos.entity.EventPayment;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class EventPaymentBOImpl implements EventPaymentBO {
         EventPaymentDAO eventPaymentDAO = new EventPaymentDAOImpl();
+
+        EventOrderDAO eventOrderDAO = new EventOrderDAOImpl();
+
+
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {
         return eventPaymentDAO.currentId();
@@ -33,5 +43,22 @@ public class EventPaymentBOImpl implements EventPaymentBO {
     @Override
     public String CurrentId() throws SQLException, ClassNotFoundException {
         return eventPaymentDAO.CurrentId();
+    }
+
+    @Override
+    public List<String> getid() {
+        return eventOrderDAO.getid();
+    }
+
+    @Override
+    public EventOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException {
+        EventOrder eventOrder = eventOrderDAO.searchByPOID(id);
+        EventOrderDTO eventOrderDTO = new EventOrderDTO(
+                eventOrder.getEOID(),
+                eventOrder.getCID(),
+                eventOrder.getEcode(),
+                eventOrder.getAmount()
+        );
+        return eventOrderDTO;
     }
 }

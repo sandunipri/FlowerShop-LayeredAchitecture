@@ -15,7 +15,7 @@ public interface FlowerDAO {
 
     public  Flower searchByCode(String Fcode) throws SQLException, ClassNotFoundException;
 
-    public  Flower searchByName(String name) throws SQLException, ClassNotFoundException ;
+    public  Flower searchByFlowerName(String name) throws SQLException, ClassNotFoundException ;
 
     public  List<String> getFlowerName() throws SQLException, ClassNotFoundException ;
 

@@ -42,7 +42,7 @@ public class FlowerDAOImpl implements FlowerDAO {
     }
 
     @Override
-    public  Flower searchByName(String name) throws SQLException, ClassNotFoundException {
+    public  Flower searchByFlowerName(String name) throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT * FROM Flower WHERE F_name = ?";
 
         PreparedStatement preparedStatement= DbConnection.getInstance().getConnection().prepareStatement(sql);

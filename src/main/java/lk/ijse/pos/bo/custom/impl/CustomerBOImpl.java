@@ -3,9 +3,13 @@ package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.CustomerBO;
 import lk.ijse.pos.dao.custom.CustomerDAO;
+import lk.ijse.pos.dao.custom.UserDAO;
 import lk.ijse.pos.dao.custom.impl.CustomerDAOImpl;
+import lk.ijse.pos.dao.custom.impl.UserDAOImpl;
 import lk.ijse.pos.dto.CustomerDTO;
+import lk.ijse.pos.dto.UserDTO;
 import lk.ijse.pos.entity.Customer;
+import lk.ijse.pos.entity.User;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,6 +17,8 @@ import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
     CustomerDAO customerDAO = new CustomerDAOImpl();
+
+    UserDAO userDAO = new UserDAOImpl();
     @Override
     public List<String> getCid() throws SQLException, ClassNotFoundException {
         return customerDAO.getCid();
@@ -100,5 +106,21 @@ public class CustomerBOImpl implements CustomerBO {
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {
         return customerDAO.currentId();
+    }
+
+    @Override
+    public List<String> getUserId() throws SQLException, ClassNotFoundException {
+       return userDAO.getId();
+    }
+
+    @Override
+    public UserDTO searchByuserID(String id) throws SQLException, ClassNotFoundException {
+        User user = userDAO.searchByID(id);
+        UserDTO userDTO = new UserDTO(
+                user.getUid(),
+                user.getUName(),
+                user.getUPasswrod()
+        );
+        return userDTO;
     }
 }

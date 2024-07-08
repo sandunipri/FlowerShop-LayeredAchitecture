@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom;
 
 import lk.ijse.pos.dto.EmployeeDTO;
+import lk.ijse.pos.dto.UserDTO;
 import lk.ijse.pos.entity.Employee;
 
 import java.sql.SQLException;
@@ -17,8 +18,11 @@ public interface EmployeeBO {
 
     public  boolean delete(String eid) throws SQLException, ClassNotFoundException ;
 
-    public  List<Employee> getAll() throws SQLException, ClassNotFoundException ;
-
     public  String currentId() throws SQLException, ClassNotFoundException ;
 
+    List<EmployeeDTO> getEmployeeAll() throws SQLException, ClassNotFoundException;
+
+    UserDTO searchByUserID(String id) throws SQLException, ClassNotFoundException;
+
+    List<String> getId() throws SQLException, ClassNotFoundException;
 }
