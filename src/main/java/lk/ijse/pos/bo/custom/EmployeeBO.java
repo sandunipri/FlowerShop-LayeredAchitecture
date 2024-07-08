@@ -1,5 +1,6 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.EmployeeDTO;
 import lk.ijse.pos.dto.UserDTO;
 import lk.ijse.pos.entity.Employee;
@@ -7,7 +8,7 @@ import lk.ijse.pos.entity.Employee;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EmployeeBO {
+public interface EmployeeBO extends SuperBO {
     public List<String> getEid() throws SQLException, ClassNotFoundException;
 
     public EmployeeDTO searchByID(String E_id) throws SQLException, ClassNotFoundException ;

@@ -1,5 +1,6 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.StockDTO;
 import lk.ijse.pos.entity.EventOrderDetail;
 import lk.ijse.pos.entity.ProductOrderDetail;
@@ -9,7 +10,7 @@ import lk.ijse.pos.entity.Supplier;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface StockBO {
+public interface StockBO extends SuperBO {
     public boolean add(StockDTO dto) throws SQLException, ClassNotFoundException;
     public List<String> getCodes() throws SQLException, ClassNotFoundException;
     public StockDTO searchById(String stockID) throws SQLException, ClassNotFoundException;

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.UserBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.UserDAO;
 import lk.ijse.pos.dao.custom.impl.UserDAOImpl;
 import lk.ijse.pos.dto.UserDTO;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserBOImpl implements UserBO {
-    UserDAO userDAO = new UserDAOImpl();
+    UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
 
     @Override
     public List<String> getId() throws SQLException, ClassNotFoundException {

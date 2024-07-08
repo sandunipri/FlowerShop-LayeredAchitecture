@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.ProductPaymentBO;
 import lk.ijse.pos.bo.custom.impl.ProductPaymentBOImpl;
 import lk.ijse.pos.db.DbConnection;
@@ -61,7 +62,7 @@ public class ProductPaymentController {
     @FXML
     private TextField txtPaidPayment;
 
-    ProductPaymentBO productPaymentBO = new ProductPaymentBOImpl();
+    ProductPaymentBO productPaymentBO = (ProductPaymentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PRODUCTPAYMENT);
 
     String paymentId;
 

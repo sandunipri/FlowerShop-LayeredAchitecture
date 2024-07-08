@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.FlowerBO;
 import lk.ijse.pos.bo.custom.impl.FlowerBOImpl;
 import lk.ijse.pos.dto.FlowerDTO;
@@ -23,7 +24,7 @@ public class FlowerFormContriller {
     @FXML
     private TextField txtFname;
 
-    FlowerBO flowerBO = new FlowerBOImpl();
+    FlowerBO flowerBO = (FlowerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.FLOWER);
 
     public void setSupplierFormController(SupplierFormController supplierFormController) {
         this.supplierFormController = supplierFormController;

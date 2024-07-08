@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EventPlaceOrderBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.*;
 import lk.ijse.pos.dao.custom.impl.*;
 import lk.ijse.pos.db.DbConnection;
@@ -13,12 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
-    EventOrderDAO eventOrderDAO = new EventOrderDAOImpl();
-    EventOrderDetailDAO eventOrderDetailDAO = new EventOrderDetailDAOImpl();
-    FlowerDAO flowerDAO = new FlowerDAOImpl();
-    StockDAO stockDAO = new StockDAOImpl();
-    EventDAO eventDAO = new EventDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
+    EventOrderDAO eventOrderDAO = (EventOrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENTORDER);
+    EventOrderDetailDAO eventOrderDetailDAO = (EventOrderDetailDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENTORDERDETAIL);
+    FlowerDAO flowerDAO = (FlowerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.FLOWER);
+    StockDAO stockDAO = (StockDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STOCK);
+    EventDAO eventDAO = (EventDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENT);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {
         return eventOrderDAO.currentId();

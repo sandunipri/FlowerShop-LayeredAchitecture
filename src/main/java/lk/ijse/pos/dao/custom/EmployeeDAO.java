@@ -1,11 +1,12 @@
 package lk.ijse.pos.dao.custom;
 
+import lk.ijse.pos.dao.SuperDAO;
 import lk.ijse.pos.entity.Employee;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EmployeeDAO {
+public interface EmployeeDAO extends SuperDAO {
     public  List<String> getEid() throws SQLException, ClassNotFoundException ;
     public  Employee searchByID(String E_id) throws SQLException, ClassNotFoundException;
 

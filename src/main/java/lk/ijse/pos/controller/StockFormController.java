@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.StockBO;
 import lk.ijse.pos.bo.custom.impl.StockBOImpl;
 import lk.ijse.pos.dto.StockDTO;
@@ -32,7 +33,7 @@ public class StockFormController {
     @FXML
     private TextField txtSName;
 
-    StockBO stockBO = new StockBOImpl();
+    StockBO stockBO = (StockBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STOCK);
 
     public void setSupplierFormController(SupplierFormController supplierFormController) {
         this.supplierFormController = supplierFormController;

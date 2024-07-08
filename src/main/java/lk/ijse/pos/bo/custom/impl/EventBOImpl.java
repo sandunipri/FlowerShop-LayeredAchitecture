@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EventBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.EventDAO;
 import lk.ijse.pos.dao.custom.impl.EventDAOImpl;
 import lk.ijse.pos.dto.EventDTO;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class EventBOImpl implements EventBO {
 
-    EventDAO eventDAO = new EventDAOImpl();
+    EventDAO eventDAO = (EventDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENT);
     @Override
     public List<String> getNames() throws SQLException, ClassNotFoundException {
        return eventDAO.getNames();

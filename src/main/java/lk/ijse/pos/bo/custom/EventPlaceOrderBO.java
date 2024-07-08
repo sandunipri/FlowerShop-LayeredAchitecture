@@ -1,5 +1,6 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dao.custom.impl.EventOrderDAOImpl;
 import lk.ijse.pos.dao.custom.impl.EventOrderDetailDAOImpl;
 import lk.ijse.pos.dto.*;
@@ -7,7 +8,7 @@ import lk.ijse.pos.dto.*;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EventPlaceOrderBO {
+public interface EventPlaceOrderBO extends SuperBO {
     public  String currentId() throws SQLException, ClassNotFoundException ;
     public  boolean saveOrder(EventOrderDTO eventOrder) throws SQLException, ClassNotFoundException ;
     public List<String> getid() ;

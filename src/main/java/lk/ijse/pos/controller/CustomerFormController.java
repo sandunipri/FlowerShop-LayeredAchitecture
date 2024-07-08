@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.CustomerBO;
 import lk.ijse.pos.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.pos.dao.custom.CustomerDAO;
@@ -83,7 +84,7 @@ public class CustomerFormController {
     private TableView<CustomerTm> tblCustomercart;
     private List<CustomerDTO> customerList = new ArrayList<>();
 
-    CustomerBO customerBO = new CustomerBOImpl();
+    CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
 
     public void setEventOrderFormController(EventOrderFormController eventOrderFormController) {
         this.eventOrderFormController = eventOrderFormController;

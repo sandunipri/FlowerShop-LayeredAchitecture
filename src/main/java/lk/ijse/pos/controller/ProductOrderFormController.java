@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.ProductPlaceOrderBO;
 import lk.ijse.pos.bo.custom.impl.ProductPlaceOrderBOImpl;
 import lk.ijse.pos.dto.*;
@@ -125,7 +126,7 @@ public class ProductOrderFormController {
 
     private  AddproductFormController addProductFormController;
 
-    ProductPlaceOrderBO productPlaceOrderBO = new ProductPlaceOrderBOImpl();
+    ProductPlaceOrderBO productPlaceOrderBO = (ProductPlaceOrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PRODUCTPLACEORDER);
 
     public void initialize(){
         setDate();

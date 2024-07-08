@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.EmployeeBO;
 import lk.ijse.pos.bo.custom.impl.EmployeeBOImpl;
 import lk.ijse.pos.dto.EmployeeDTO;
@@ -87,7 +88,7 @@ public class EmployeeFormController {
 
     private List<EmployeeDTO> employeeList = new ArrayList<>();
 
-    EmployeeBO employeeBO = new EmployeeBOImpl();
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EMPLOYEE);
 
     public void initialize() {
         this.employeeList = getAllEmployees();

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.SupplierBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.FlowerDAO;
 import lk.ijse.pos.dao.custom.StockDAO;
 import lk.ijse.pos.dao.custom.SupplierDAO;
@@ -18,13 +19,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SupplierBOImpl implements SupplierBO {
-    SupplierDAO supplierDAO = new SupplierDAOImpl();
+    SupplierDAO supplierDAO = (SupplierDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.SUPPLIER);
 
-    FlowerDAO flowerDAO = new FlowerDAOImpl();
+    FlowerDAO flowerDAO = (FlowerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.FLOWER);
 
-    UserDAO userDAO = new UserDAOImpl();
+    UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
 
-    StockDAO stockDAO = new StockDAOImpl();
+    StockDAO stockDAO = (StockDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STOCK);
 
     @Override
     public String currentSId() throws SQLException, ClassNotFoundException {

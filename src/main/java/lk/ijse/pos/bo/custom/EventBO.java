@@ -1,11 +1,12 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.EventDTO;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EventBO {
+public interface EventBO extends SuperBO {
     public List<String> getNames() throws SQLException, ClassNotFoundException;
 
     public EventDTO searchByName(String name) throws SQLException, ClassNotFoundException;

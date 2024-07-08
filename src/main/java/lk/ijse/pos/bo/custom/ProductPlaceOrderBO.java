@@ -1,12 +1,13 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ProductPlaceOrderBO {
+public interface ProductPlaceOrderBO extends SuperBO {
     //product order details methods
     public  boolean save(List<ProductOrderDetailDTO> productOrderDetailList) throws SQLException, ClassNotFoundException;
     public   boolean saved(ProductOrderDetailDTO dto) throws SQLException, ClassNotFoundException;

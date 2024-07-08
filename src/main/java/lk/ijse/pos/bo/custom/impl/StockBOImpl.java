@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.StockBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.StockDAO;
 import lk.ijse.pos.dao.custom.impl.StockDAOImpl;
 import lk.ijse.pos.dto.StockDTO;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class StockBOImpl implements StockBO {
 
-    StockDAO stockDAO = new StockDAOImpl();
+    StockDAO stockDAO = (StockDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STOCK);
     @Override
     public boolean add(StockDTO dto) throws SQLException, ClassNotFoundException {
         Stock stock = new Stock(

@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.ProductBO;
 import lk.ijse.pos.bo.custom.impl.ProductBOImpl;
 import lk.ijse.pos.dto.ProductDTO;
@@ -28,7 +29,7 @@ public class AddproductFormController {
     @FXML
     private TextField txtProductPrice;
 
-    ProductBO productBO = new ProductBOImpl();
+    ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PRODUCT);
 
     public void setProductOrderFormController   (ProductOrderFormController productOrderFormController) {
         this.productOrderFormController = productOrderFormController;

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EmployeeBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.EmployeeDAO;
 import lk.ijse.pos.dao.custom.UserDAO;
 import lk.ijse.pos.dao.custom.impl.EmployeeDAOImpl;
@@ -16,9 +17,9 @@ import java.util.List;
 
 public class EmployeeBOImpl implements EmployeeBO {
 
-    EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+    EmployeeDAO employeeDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EMPLOYEE);
 
-    UserDAO userDAO = new UserDAOImpl();
+    UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
 
 
     @Override

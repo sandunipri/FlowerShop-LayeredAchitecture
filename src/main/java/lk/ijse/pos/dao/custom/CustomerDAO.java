@@ -1,11 +1,12 @@
 package lk.ijse.pos.dao.custom;
 
+import lk.ijse.pos.dao.SuperDAO;
 import lk.ijse.pos.entity.Customer;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface CustomerDAO {
+public interface CustomerDAO extends SuperDAO {
     public  List<String> getCid() throws SQLException, ClassNotFoundException ;
     public  Customer searchByID(String C_id) throws SQLException, ClassNotFoundException ;
 

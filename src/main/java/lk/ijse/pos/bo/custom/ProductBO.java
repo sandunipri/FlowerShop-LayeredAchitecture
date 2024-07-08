@@ -1,12 +1,13 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.ProductDTO;
 import lk.ijse.pos.entity.Product;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ProductBO {
+public interface ProductBO extends SuperBO {
     public List<String> getProductName() throws SQLException, ClassNotFoundException ;
 
     public ProductDTO searchByName(String name) throws SQLException, ClassNotFoundException ;

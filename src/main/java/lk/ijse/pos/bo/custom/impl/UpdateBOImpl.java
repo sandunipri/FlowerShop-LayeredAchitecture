@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.UpdateBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.StockDAO;
 import lk.ijse.pos.dao.custom.SupplierDAO;
 import lk.ijse.pos.dao.custom.impl.StockDAOImpl;
@@ -17,8 +18,8 @@ import java.util.List;
 
 public class UpdateBOImpl implements UpdateBO {
 
-    SupplierDAO supplierDAO = new SupplierDAOImpl();
-    StockDAO stockDAO = new StockDAOImpl();
+    SupplierDAO supplierDAO = (SupplierDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.SUPPLIER);
+    StockDAO stockDAO = (StockDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STOCK);
     public  boolean update(UpdateDTO updateDTO) throws SQLException {
 
         List<SupplierDTO> dtoList = updateDTO.getSupplierList();

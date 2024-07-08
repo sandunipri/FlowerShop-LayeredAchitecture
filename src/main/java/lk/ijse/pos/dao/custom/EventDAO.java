@@ -1,11 +1,13 @@
 package lk.ijse.pos.dao.custom;
 
+import lk.ijse.pos.bo.SuperBO;
+import lk.ijse.pos.dao.SuperDAO;
 import lk.ijse.pos.entity.Event;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EventDAO {
+public interface EventDAO extends SuperDAO {
     public List<String> getNames() throws SQLException, ClassNotFoundException;
 
     public Event searchByName(String name) throws SQLException, ClassNotFoundException;

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.EventPaymentBO;
 import lk.ijse.pos.bo.custom.impl.EventPaymentBOImpl;
 import lk.ijse.pos.db.DbConnection;
@@ -58,7 +59,7 @@ public class EventPaymentFormController {
     @FXML
     private TextField txtPaidPayment;
 
-    EventPaymentBO eventPaymentBO = new EventPaymentBOImpl();
+    EventPaymentBO eventPaymentBO = (EventPaymentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EVENTPAYMENT);
 
     public void initialize() {
         setDate();

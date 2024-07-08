@@ -2,6 +2,7 @@ package lk.ijse.pos.bo.custom.impl;
 
 
 import lk.ijse.pos.bo.custom.CustomerBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.CustomerDAO;
 import lk.ijse.pos.dao.custom.UserDAO;
 import lk.ijse.pos.dao.custom.impl.CustomerDAOImpl;
@@ -16,9 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-
-    UserDAO userDAO = new UserDAOImpl();
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
     @Override
     public List<String> getCid() throws SQLException, ClassNotFoundException {
         return customerDAO.getCid();

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.FlowerBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.FlowerDAO;
 import lk.ijse.pos.dao.custom.impl.FlowerDAOImpl;
 import lk.ijse.pos.dto.FlowerDTO;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class FlowerBOImpl implements FlowerBO {
-    FlowerDAO flowerDAO = new FlowerDAOImpl();
+    FlowerDAO flowerDAO = (FlowerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.FLOWER);
     @Override
     public List<String> getFcode() throws SQLException, ClassNotFoundException {
         return flowerDAO.getFcode();

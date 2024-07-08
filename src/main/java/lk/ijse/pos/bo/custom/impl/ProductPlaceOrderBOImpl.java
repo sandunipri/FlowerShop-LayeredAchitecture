@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.ProductPlaceOrderBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.*;
 import lk.ijse.pos.dao.custom.impl.*;
 import lk.ijse.pos.db.DbConnection;
@@ -14,13 +15,13 @@ import java.util.List;
 
 public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
 
-    ProductOrderDetailDAO productOrderDetailDAO = new ProductOrderDetailDAOImpl();
-    ProductOrderDAO productOrderDAO = new ProductOrderDAOImpl();
+    ProductOrderDetailDAO productOrderDetailDAO = (ProductOrderDetailDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCTORDERDETAIL);
+    ProductOrderDAO productOrderDAO = (ProductOrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCTORDER);
 
-    ProductDAO productDAO = new ProductDAOImpl();
-    StockDAO stockDAO = new StockDAOImpl();
-    FlowerDAO flowerDAO = new FlowerDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
+    ProductDAO productDAO = (ProductDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCT);
+    StockDAO stockDAO = (StockDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STOCK);
+    FlowerDAO flowerDAO = (FlowerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.FLOWER);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
 
     @Override

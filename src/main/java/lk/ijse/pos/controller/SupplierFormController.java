@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.SupplierBO;
 import lk.ijse.pos.bo.custom.UpdateBO;
 import lk.ijse.pos.bo.custom.impl.SupplierBOImpl;
@@ -106,9 +107,9 @@ public class SupplierFormController {
     @FXML
     private Button update;
 
-    SupplierBO supplierBO = new SupplierBOImpl();
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SUPPLIER);
 
-    UpdateBO updateBO = new UpdateBOImpl();
+    UpdateBO updateBO = (UpdateBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.UPDATE);
     public void initialize(){
         NextSID();
         getStockID();

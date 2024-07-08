@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.ProductPaymentBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.ProductOrderDAO;
 import lk.ijse.pos.dao.custom.ProductPaymentDAO;
 import lk.ijse.pos.dao.custom.impl.ProductOrderDAOImpl;
@@ -14,9 +15,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ProductPaymentBOImpl implements ProductPaymentBO {
-    ProductPaymentDAO productPaymentDAO = new ProductPaymentDAOImpl();
+    ProductPaymentDAO productPaymentDAO = (ProductPaymentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCTPAYMENT);
 
-    ProductOrderDAO productOrderDAO = new ProductOrderDAOImpl();
+    ProductOrderDAO productOrderDAO = (ProductOrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCTORDER);
 
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {

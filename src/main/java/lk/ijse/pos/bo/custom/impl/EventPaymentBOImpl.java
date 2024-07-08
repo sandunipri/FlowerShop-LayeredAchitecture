@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.EventPaymentBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.EventOrderDAO;
 import lk.ijse.pos.dao.custom.EventPaymentDAO;
 import lk.ijse.pos.dao.custom.impl.EventOrderDAOImpl;
@@ -15,9 +16,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EventPaymentBOImpl implements EventPaymentBO {
-        EventPaymentDAO eventPaymentDAO = new EventPaymentDAOImpl();
-
-        EventOrderDAO eventOrderDAO = new EventOrderDAOImpl();
+        EventPaymentDAO eventPaymentDAO = (EventPaymentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENTPAYMENT);
+        EventOrderDAO eventOrderDAO = (EventOrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EVENTORDER);
 
 
     @Override

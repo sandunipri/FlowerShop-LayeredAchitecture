@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.EventBO;
 import lk.ijse.pos.bo.custom.impl.EventBOImpl;
 import lk.ijse.pos.dto.EventDTO;
@@ -36,7 +37,7 @@ public class AddEventFormController {
     private TextField txtEPrice;
     private EventOrderFormController eventOrderFormController;
 
-    private EventBO eventBO = new EventBOImpl();
+    private EventBO eventBO = (EventBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EVENT);
 
     public void setEventOrderFormController(EventOrderFormController eventOrderFormController) {
         this.eventOrderFormController = eventOrderFormController;

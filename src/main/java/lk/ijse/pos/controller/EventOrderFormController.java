@@ -15,6 +15,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.EventPlaceOrderBO;
 import lk.ijse.pos.bo.custom.StockBO;
 import lk.ijse.pos.bo.custom.impl.EventPlaceOrderBOImpl;
@@ -115,7 +116,7 @@ public class EventOrderFormController {
 
     String EOID;
 
-    EventPlaceOrderBO eventPlaceOrderBO = new EventPlaceOrderBOImpl();
+    EventPlaceOrderBO eventPlaceOrderBO = (EventPlaceOrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.EVENTPLACEORDER);
     public void initialize() {
         setDate();
         NextOrderNo();

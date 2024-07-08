@@ -1,5 +1,6 @@
 package lk.ijse.pos.bo.custom;
 
+import lk.ijse.pos.bo.SuperBO;
 import lk.ijse.pos.dto.EventOrderDTO;
 import lk.ijse.pos.dto.EventPaymentDTO;
 import lk.ijse.pos.entity.EventPayment;
@@ -7,7 +8,7 @@ import lk.ijse.pos.entity.EventPayment;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface EventPaymentBO {
+public interface EventPaymentBO extends SuperBO {
     public  String currentId() throws SQLException, ClassNotFoundException;
 
     public boolean add(EventPaymentDTO eventPaymentDTO) throws SQLException, ClassNotFoundException ;

@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.pos.bo.BOFactory;
 import lk.ijse.pos.bo.custom.UserBO;
 import lk.ijse.pos.bo.custom.impl.UserBOImpl;
 import lk.ijse.pos.dto.UserDTO;
@@ -39,7 +40,7 @@ public class RegisterFormController {
     @FXML
     private AnchorPane rootNodeRR;
 
-    UserBO userBO = new UserBOImpl();
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
 
     public void initialize() {
 

@@ -1,6 +1,7 @@
 package lk.ijse.pos.bo.custom.impl;
 
 import lk.ijse.pos.bo.custom.ProductBO;
+import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.ProductDAO;
 import lk.ijse.pos.dao.custom.impl.ProductDAOImpl;
 import lk.ijse.pos.dto.ProductDTO;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ProductBOImpl implements ProductBO {
-    ProductDAO productDAO = new ProductDAOImpl();
+    ProductDAO productDAO = (ProductDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PRODUCT);
 
     @Override
     public List<String> getProductName() throws SQLException, ClassNotFoundException {
