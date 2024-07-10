@@ -21,7 +21,7 @@ public class EventOrderDetailDAOImpl implements EventOrderDetailDAO {
         return true;
     }*/
     @Override
-    public boolean save(EventOrderDetail eventOrderDetail) throws SQLException, ClassNotFoundException {
+    public boolean add(EventOrderDetail eventOrderDetail) throws SQLException, ClassNotFoundException {
 
       /*  String sql = "INSERT INTO E_OrderDetail VALUES(?, ?, ?, ?)";
 
@@ -38,9 +38,24 @@ public class EventOrderDetailDAOImpl implements EventOrderDetailDAO {
     }
 
     @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(EventOrderDetail entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public EventOrderDetail searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
     public boolean save(List<EventOrderDetail> eventOrderDetailList) throws SQLException, ClassNotFoundException {
         for (EventOrderDetail eventOrderDetail: eventOrderDetailList) {
-            if(!save(eventOrderDetail)) {
+            if(!add(eventOrderDetail)) {
                 return false;
             }
         }

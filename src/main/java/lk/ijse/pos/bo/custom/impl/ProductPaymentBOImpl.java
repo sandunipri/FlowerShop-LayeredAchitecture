@@ -46,7 +46,7 @@ public class ProductPaymentBOImpl implements ProductPaymentBO {
 
     @Override
     public ProductOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException {
-        ProductOrder productOrder = productOrderDAO.searchByPOID(id);
+        ProductOrder productOrder = productOrderDAO.searchByID(id);
         ProductOrderDTO productOrderDTO = new ProductOrderDTO(
                 productOrder.getPOID(),
                 productOrder.getCID()

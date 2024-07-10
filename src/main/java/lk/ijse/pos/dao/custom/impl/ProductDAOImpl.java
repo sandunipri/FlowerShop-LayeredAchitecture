@@ -112,6 +112,16 @@ public class ProductDAOImpl implements ProductDAO {
         }    }*/
         return SQLUtill.execute("DELETE FROM Product WHERE P_code = ?", pcode);
     }
+
+    @Override
+    public boolean update(Product entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Product searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }
 
 

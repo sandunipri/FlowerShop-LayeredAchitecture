@@ -10,12 +10,8 @@ import java.util.List;
 public interface ProductPlaceOrderBO extends SuperBO {
     //product order details methods
     public  boolean save(List<ProductOrderDetailDTO> productOrderDetailList) throws SQLException, ClassNotFoundException;
-    public   boolean saved(ProductOrderDetailDTO dto) throws SQLException, ClassNotFoundException;
-
     //product order methods
     public  String currentId() throws SQLException, ClassNotFoundException ;
-
-    public  boolean save(ProductOrderDTO dto) throws SQLException, ClassNotFoundException ;
 
     public  List<String> getid();
 

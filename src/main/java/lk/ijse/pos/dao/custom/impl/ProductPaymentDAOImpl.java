@@ -53,4 +53,19 @@ public class ProductPaymentDAOImpl implements ProductPaymentDAO {
                 productPayment.getAmount(),
                 productPayment.getBalance());
     }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(ProductPayment entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public ProductPayment searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }

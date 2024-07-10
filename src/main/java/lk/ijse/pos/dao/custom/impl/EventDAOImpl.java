@@ -101,5 +101,15 @@ public class EventDAOImpl implements EventDAO {
     }*/
         return SQLUtill.execute("DELETE FROM Event WHERE E_code = ?", eCode);
     }
+
+    @Override
+    public boolean update(Event entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Event searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }
 

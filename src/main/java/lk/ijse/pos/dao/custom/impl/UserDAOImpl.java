@@ -37,14 +37,12 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1, id);
 */
-        ResultSet resultSet = SQLUtill.execute("SELECT * FROM User WHERE U_id = ?", id);
+        ResultSet resultSet = SQLUtill.execute("SELECT * FROM user WHERE U_id = ?", id);
         if(resultSet.next()) {
             return new User(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3)
-
-
             );
         }
         return null;
@@ -67,5 +65,15 @@ public class UserDAOImpl implements UserDAO {
             return false;
         }*/
         return SQLUtill.execute("UPDATE User SET U_name = ?, U_password = ? WHERE U_id = ?", user.getUName(), user.getUPasswrod(), user.getUid());
+    }
+
+    @Override
+    public boolean add(User entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
     }
 }

@@ -16,14 +16,14 @@ public class ProductOrderDetailDAOImpl implements ProductOrderDetailDAO {
     public  boolean save(List<ProductOrderDetail> productOrderDetailList) throws SQLException, ClassNotFoundException {
 
         for (ProductOrderDetail productOrderDetail: productOrderDetailList) {
-            if(!saved(productOrderDetail)) {
+            if(!add(productOrderDetail)) {
                 return false;
             }
         }
         return true;
     }
     @Override
-    public  boolean saved(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
+    public  boolean add(ProductOrderDetail productOrderDetail) throws SQLException, ClassNotFoundException {
 
        /* String sql = "INSERT INTO P_OrderDetail VALUES(?, ?, ?, ?, ?, ?, ?)";
 
@@ -47,5 +47,20 @@ public class ProductOrderDetailDAOImpl implements ProductOrderDetailDAO {
                 productOrderDetail.getPrice(),
                 productOrderDetail.getQty(),
                 productOrderDetail.getAmount());
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(ProductOrderDetail entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public ProductOrderDetail searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
     }
 }

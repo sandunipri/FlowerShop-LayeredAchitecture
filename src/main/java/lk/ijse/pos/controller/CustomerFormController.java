@@ -99,7 +99,7 @@ public class CustomerFormController {
     private ProductOrderFormController productOrderFormController;
 
     public void initialize(){
-        this.customerList = getAllCustomers();
+        getAllCustomers();
         getCustomerId();
         setCellValueFactory();
         loadCustomerTable();
@@ -163,14 +163,14 @@ public class CustomerFormController {
         System.out.println("selectedItem = " + selectedItem);
     }
 
-    private List<CustomerDTO> getAllCustomers() {
-        List<CustomerDTO> customerList = null;
+    private void getAllCustomers() {
+        List<CustomerDTO> list = null;
         try {
-            customerList = customerBO.getAll();
+            list = customerBO.getAll();
+            this.customerList = list;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return customerList;
     }
 
 
@@ -219,7 +219,7 @@ public class CustomerFormController {
     }
 
     public void cmbCutomerOnAction(ActionEvent actionEvent) {
-        String id = (String) Cidcombox.getValue();
+        String id = Cidcombox.getValue();
         try {
             CustomerDTO customer = customerBO.searchByID(id);
             if (customer != null) {
@@ -242,18 +242,17 @@ public class CustomerFormController {
     @FXML
     void cmbUIDOnAction(ActionEvent event) {
         String id =  cmbUID.getValue();
-        try {
+        txtUid.setText(id);
+        /*try {
             UserDTO user = customerBO.searchByuserID(id);
             if (user != null) {
                 txtUid.setText(user.getUid());
-
             } else {
-
                 clearFields();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
@@ -281,7 +280,9 @@ public class CustomerFormController {
                 if (isadded) {
 
                     new Alert(Alert.AlertType.CONFIRMATION, "Customer added!").show();
-                    initialize();
+                    getAllCustomers();
+                    loadCustomerTable();
+                    nextCusId();
 
                     productOrderFormController.getCustomerTelNo();
 
@@ -311,7 +312,8 @@ public class CustomerFormController {
             boolean isupdate=  customerBO.update(customer);
             if (isupdate){
                 new Alert(Alert.AlertType.CONFIRMATION,"customer updated!").show();
-                initialize();
+                getAllCustomers();
+                loadCustomerTable();
             }
 
         }catch (Exception e){
@@ -329,7 +331,8 @@ public class CustomerFormController {
             boolean isDeleted =customerBO.delete(cid);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Customer deleted!").show();
-                initialize();
+                getAllCustomers();
+                loadCustomerTable();
             }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "something went wrong!").show();

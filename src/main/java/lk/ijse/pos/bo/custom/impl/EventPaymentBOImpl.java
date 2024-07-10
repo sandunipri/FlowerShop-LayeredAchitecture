@@ -52,7 +52,7 @@ public class EventPaymentBOImpl implements EventPaymentBO {
 
     @Override
     public EventOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException {
-        EventOrder eventOrder = eventOrderDAO.searchByPOID(id);
+        EventOrder eventOrder = eventOrderDAO.searchByID(id);
         EventOrderDTO eventOrderDTO = new EventOrderDTO(
                 eventOrder.getEOID(),
                 eventOrder.getCID(),

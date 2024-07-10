@@ -32,8 +32,10 @@ public class StockDAOImpl implements StockDAO {
             } else {
                 return false;
             }*/
-        return SQLUtill.execute("INSERT INTO Stock (Stock_id, F_code, QtyOnHand) VALUES (?, ?, ?, )",stock.getStockId(),stock.getFCode(),stock.getQtyOnHand());
-
+        return SQLUtill.execute("INSERT INTO Stock (Stock_id, F_code, QtyOnHand) VALUES (?, ?, ?)",
+                stock.getStockId(),
+                stock.getFCode(),
+                stock.getQtyOnHand());
 
     }
 
@@ -163,7 +165,11 @@ public class StockDAOImpl implements StockDAO {
         } else {
             return false;
         }*/
-        return SQLUtill.execute("INSERT INTO Stock VALUES (?, ?,?)",stock.getStockId(),stock.getFCode(),stock.getQtyOnHand());
+        return SQLUtill.execute("INSERT INTO Stock VALUES (?, ?,?)",
+                stock.getStockId(),
+                stock.getFCode(),
+                stock.getQtyOnHand()
+        );
     }
 
     @Override
@@ -181,6 +187,16 @@ public class StockDAOImpl implements StockDAO {
             return false;
         }*/
         return SQLUtill.execute("DELETE FROM Stock WHERE Stock_id = ?",stockid);
+    }
+
+    @Override
+    public boolean update(Stock entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Stock searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
     }
 }
 

@@ -29,19 +29,10 @@ public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
         return false;
     }
 
-    @Override
-    public boolean saved(ProductOrderDetailDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
-    }
 
     @Override
     public String currentId() throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean save(ProductOrderDTO dto) throws SQLException, ClassNotFoundException {
-        return false;
+        return productOrderDAO.currentId();
     }
 
     @Override
@@ -82,7 +73,7 @@ public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
             Connection connection = DbConnection.getInstance().getConnection();
             connection.setAutoCommit(false);
 
-            try{  boolean isProductOrderSaved = productOrderDAO.save(productOrder);
+            try{  boolean isProductOrderSaved = productOrderDAO.add(productOrder);
                 if (isProductOrderSaved) {
                     System.out.println("r");
                     boolean isOrderDetailSaved = productOrderDetailDAO.save(orderlist);
@@ -100,6 +91,7 @@ public class ProductPlaceOrderBOImpl implements ProductPlaceOrderBO {
                 connection.rollback();
                 return false;
             }catch (Exception e){
+                e.printStackTrace();
                 connection.rollback();
                 return false;
 

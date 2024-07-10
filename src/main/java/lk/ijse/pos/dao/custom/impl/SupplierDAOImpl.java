@@ -26,7 +26,7 @@ public class SupplierDAOImpl implements SupplierDAO {
     }
 
     @Override
-    public  boolean save(Supplier supplierList) throws SQLException, ClassNotFoundException {
+    public  boolean add(Supplier supplierList) throws SQLException, ClassNotFoundException {
        /* String sql = "INSERT INTO Supplier VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement preparedStatement = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -54,10 +54,26 @@ public class SupplierDAOImpl implements SupplierDAO {
                 supplierList.getPrice());
 
     }
-   @Override
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(Supplier entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Supplier searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
    public  boolean save(List<Supplier> supplierList) throws SQLException, ClassNotFoundException {
         for (Supplier supplier : supplierList) {
-            if(!save(supplier)) {
+            if(!add(supplier)) {
                 return false;
             }
         }

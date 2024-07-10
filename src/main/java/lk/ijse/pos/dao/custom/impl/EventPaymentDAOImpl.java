@@ -54,6 +54,21 @@ public class EventPaymentDAOImpl implements EventPaymentDAO {
     }
 
     @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(EventPayment entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public EventPayment searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
     public String CurrentId() throws SQLException, ClassNotFoundException {
        /* String sql = "SELECT PaymentId FROM EventPayment ORDER BY CAST(SUBSTRING(PaymentId, 2) AS UNSIGNED) DESC LIMIT 1";
 

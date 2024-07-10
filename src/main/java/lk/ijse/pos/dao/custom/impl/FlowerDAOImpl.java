@@ -111,5 +111,15 @@ public class FlowerDAOImpl implements FlowerDAO {
         }*/
         return SQLUtill.execute("DELETE FROM Flower WHERE F_code = ?", fcode);
     }
+
+    @Override
+    public boolean update(Flower entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Flower searchByID(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }
 

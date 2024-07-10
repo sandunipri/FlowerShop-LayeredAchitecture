@@ -45,7 +45,7 @@ public class SupplierBOImpl implements SupplierBO {
                 dto.getQTY(),
                 dto.getPrice()
         );
-        return supplierDAO.save(supplier);
+        return supplierDAO.add(supplier);
     }
 
     @Override

@@ -3,7 +3,6 @@ package lk.ijse.pos.bo.custom.impl;
 import lk.ijse.pos.bo.custom.EventPlaceOrderBO;
 import lk.ijse.pos.dao.DAOFactory;
 import lk.ijse.pos.dao.custom.*;
-import lk.ijse.pos.dao.custom.impl.*;
 import lk.ijse.pos.db.DbConnection;
 import lk.ijse.pos.dto.*;
 import lk.ijse.pos.entity.*;
@@ -33,17 +32,18 @@ public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
                 dto.getEcode(),
                 dto.getAmount()
         );
-        return eventOrderDAO.save(eventOrder);
+        return eventOrderDAO.add(eventOrder);
     }
 
     @Override
     public List<String> getid() {
+
         return eventOrderDAO.getid();
     }
 
     @Override
     public EventOrderDTO searchByPOID(String id) throws SQLException, ClassNotFoundException {
-        EventOrder eventOrder = eventOrderDAO.searchByPOID(id);
+        EventOrder eventOrder = eventOrderDAO.searchByID(id);
         EventOrderDTO eventOrderDTO = new EventOrderDTO(
 
                 eventOrder.getEOID(),
@@ -63,7 +63,7 @@ public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
                 dto.getPrice()
         );
 
-        return eventOrderDetailDAO.save(eventOrderDetail);
+        return eventOrderDetailDAO.add(eventOrderDetail);
     }
 
     //transaction
@@ -95,7 +95,7 @@ public class EventPlaceOrderBOImpl implements EventPlaceOrderBO {
         Connection connection = DbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
 
-        try{  boolean isEventSaverd = eventOrderDAO.save(eventOrder);
+        try{  boolean isEventSaverd = eventOrderDAO.add(eventOrder);
             if (isEventSaverd) {
                 System.out.println("r");
                 boolean isOrderDetailSaved = eventOrderDetailDAO.save(eventList);
