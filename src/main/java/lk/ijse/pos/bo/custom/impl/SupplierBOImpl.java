@@ -12,6 +12,7 @@ import lk.ijse.pos.dao.custom.impl.SupplierDAOImpl;
 import lk.ijse.pos.dao.custom.impl.UserDAOImpl;
 import lk.ijse.pos.dto.FlowerDTO;
 import lk.ijse.pos.dto.SupplierDTO;
+import lk.ijse.pos.dto.UpdateDTO;
 import lk.ijse.pos.entity.Flower;
 import lk.ijse.pos.entity.Supplier;
 
@@ -78,4 +79,5 @@ public class SupplierBOImpl implements SupplierBO {
         );
         return dto;
     }
+
 }

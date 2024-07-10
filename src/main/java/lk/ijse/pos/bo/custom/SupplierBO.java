@@ -21,4 +21,5 @@ public interface SupplierBO extends SuperBO {
     List<String> getCodes() throws SQLException, ClassNotFoundException;
 
     FlowerDTO searchByFlowerCode(String fcode) throws SQLException, ClassNotFoundException;
+
 }

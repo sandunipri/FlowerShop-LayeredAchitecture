@@ -293,7 +293,7 @@ public class EmployeeFormController {
 
     @FXML
     void cmbEmployeeOnAction(ActionEvent event) {
-        String id = (String) eidcmbbox.getValue();
+        String id = eidcmbbox.getValue();
         try {
             EmployeeDTO employee = employeeBO.searchByID(id);
             if (employee != null) {

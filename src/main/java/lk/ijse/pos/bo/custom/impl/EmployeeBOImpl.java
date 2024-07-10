@@ -29,7 +29,7 @@ public class EmployeeBOImpl implements EmployeeBO {
 
     @Override
     public EmployeeDTO searchByID(String E_id) throws SQLException, ClassNotFoundException {
-       Employee employee = new Employee();
+       Employee employee = employeeDAO.searchByID(E_id);
        EmployeeDTO employeeDTO = new EmployeeDTO(
                employee.getEid(),
                employee.getUid(),
